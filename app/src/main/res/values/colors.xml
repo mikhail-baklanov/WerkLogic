@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="sensor_alert_color">#55FF0000</color>
+    <color name="sensor_normal_color">#5500FF00</color>
+    <color name="sensor_inactive_color">#22000000</color>
+
+    <color name="inet_off_color">#55FF0000</color>
+    <color name="inet_on_color">#5500FF00</color>
+
+    <color name="listHeaderBackground">#CCC</color>
+    <color name="listHeaderTextColor">#444</color>
+    <color name="listTextColor">#444</color>
+    <color name="historySwitchSelectedColor">#8AB800</color>
+    <color name="historySwitchSelectedTextColor">#FFFFFF</color>
+    <color name="historySwitchUnselectedColor">#FFFFFF</color>
+    <color name="historySwitchUnselectedTextColor">#8AB800</color>
+ </resources>

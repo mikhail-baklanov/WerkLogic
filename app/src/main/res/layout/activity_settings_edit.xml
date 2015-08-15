@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+    <!-- список разделов -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- разделитель -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#888888"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/change_psw_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/change_psw_button" />
+
+                <TextView
+                    android:id="@+id/psw_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/foo"
+                    android:layout_weight="4"
+                    android:layout_gravity="center_vertical"
+                    />
+
+                <Button
+                    android:id="@+id/reset_psw_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:enabled="false"
+                    android:text="@string/reset_psw_button" />
+
+
+            </LinearLayout>
+
+            <!-- разделитель -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#888888"
+                android:orientation="horizontal" />
+
+            <!-- номера для смс -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:text="@string/labelSmsNotifications"
+                        style="@style/SettingHeader"/>
+
+                    <ImageView
+                        android:id="@+id/btnAddSms"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/add"
+
+                        />
+                </RelativeLayout>
+
+                <!-- контейнер для смс -->
+                <LinearLayout
+                    android:id="@+id/smsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- разделитель -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#888888"
+                android:orientation="horizontal" />
+            <!-- датчики -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:text="@string/labelSensors"
+                        style="@style/SettingHeader" />
+
+                    <ImageView
+                        android:id="@+id/btnAddSensor"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/add"
+
+                        />
+                </RelativeLayout>
+
+                <!-- контейнер для датчиков -->
+                <LinearLayout
+                    android:id="@+id/sensorsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- разделитель -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#888888"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

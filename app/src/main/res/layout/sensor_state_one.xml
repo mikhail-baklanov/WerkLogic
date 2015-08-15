@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!-- название датчика и состояние (картинка) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/sensor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="@string/foo"
+            style="@style/SensorName" />
+
+        <ImageView
+            android:id="@+id/sensor_state"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0" />
+    </LinearLayout>
+
+    <!-- временные метки срабатываний -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        >
+
+        <TextView
+            android:id="@+id/sensor_notifications"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="@string/foo"
+            style="@style/AddDelButtons" />
+    </LinearLayout>
+
+    <!-- разделитель -->
+    <LinearLayout
+        android:id="@+id/delimiter"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#888888"
+        android:orientation="horizontal" />
+
+</LinearLayout>

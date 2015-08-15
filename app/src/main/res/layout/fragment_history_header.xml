@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/historySwitchSelectedColor"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvImportant"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:text="@string/sensor_events"
+                android:layout_weight="1"
+                android:background="@color/historySwitchSelectedColor"
+                android:textColor="@color/historySwitchSelectedTextColor"
+                android:layout_margin="1px"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvAll"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:text="@string/all_events"
+                android:layout_weight="1"
+                android:background="@color/historySwitchUnselectedColor"
+                android:textColor="@color/historySwitchUnselectedTextColor"
+                android:layout_margin="1px"
+                android:gravity="center" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

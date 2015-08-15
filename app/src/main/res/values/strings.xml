@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WerkLogic</string>
+    <string name="spy_button">На охрану</string>
+    <string name="nospy_button">С охраны</string>
+    <string name="action_settings">Settings</string>
+    <string name="setting_button">Настройки</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="input_login_text">Разблокировать</string>
+    <string name="labelSmsNotifications">СМС оповещения</string>
+    <string name="settings">Настройки</string>
+    <string name="addSms">Добавить СМС</string>
+    <string name="labelSms">Номер для СМС</string>
+    <string name="btnCreate">Создать</string>
+    <string name="btnCancel">Отмена</string>
+    <string name="updateSms">Изменить номер для СМС</string>
+    <string name="btnUpdate">Изменить</string>
+    <string name="confirmSmsDelete">Удалить номер для СМС?</string>
+    <string name="btnYes">Да</string>
+    <string name="foo">foo</string>
+    <string name="fooo">очень длинное название чего бы-то ни было</string>
+    <string name="foooo">очень длинное-предлинное название чего бы то ни было на свете, длиннее чего нично быть не может</string>
+    <string name="change_psw_button">Пароль</string>
+    <string name="psw_present">задан</string>
+    <string name="psw_absent">отсутствует</string>
+    <string name="enter_new_password">Введите новый пароль</string>
+    <string name="enter_old_password">Введите старый пароль</string>
+    <string name="reenter_new_password">Повторите ввод</string>
+    <string name="psw_is_changed">Пароль изменен</string>
+    <string name="title_activity_usb_on">Подключение устройства WerkLogic</string>
+    <string name="confirmReplaceSensors">Текущая конфигурация датчиков отличается от обнаруженной на подключенном устройстве. Заменить текущую конфигурацию?</string>
+    <string name="labelSensors">Датчики</string>
+    <string name="updateSensor">Изменить название</string>
+    <string name="labelSensor">Название</string>
+    <string name="addSensor">Добавить датчик</string>
+    <string name="confirmSensorDelete">Удалить датчик?</string>
+    <string name="reset_psw_button">Сброс</string>
+    <string name="sensor_name_is_empty"><![CDATA[<не указано>]]></string>
+    <string name="title_activity_sensors_on">Заглушка</string>
+    <string name="title_activity_history">История</string>
+    <string name="empty_events_list">Пустой список</string>
+    <string name="loading">Загрузка...</string>
+    <string name="sensor_events">Тек. датчик</string>
+    <string name="all_events">Все датчики</string>
+
+</resources>
