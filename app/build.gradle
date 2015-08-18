@@ -4,6 +4,9 @@ repositories {
     maven {
         url "https://jitpack.io"
     }
+    maven {
+        url "https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/"
+    }
 }
 android {
     compileSdkVersion 22
@@ -35,5 +38,8 @@ dependencies {
 //    compile files('libs/jackson-mapper-asl-1.9.7.jar')
 //    compile files('libs/autobahn-0.5.0.jar')
 //    compile files('libs/jackson-core-asl-1.9.7.jar')
+
+    compile 'com.google.zxing:core:2.2'
+    compile 'com.embarkmobile:zxing-android-minimal:1.2.1@aar'
 }
 

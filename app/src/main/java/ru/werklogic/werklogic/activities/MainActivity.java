@@ -1,19 +1,33 @@
 package ru.werklogic.werklogic.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.android.Contents;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+import com.google.zxing.qrcode.QRCodeWriter;
+
 import java.util.Date;
+import java.util.EnumMap;
 import java.util.List;
 
 import ru.werklogic.werklogic.R;
@@ -112,6 +126,25 @@ public class MainActivity extends Activity {
         }
     }
 
+//    public void scanQRCode() {
+//        IntentIntegrator.initiateScan(this, IntentIntegrator.QR_CODE_TYPES, "Сканирование идентификатора облака");
+//
+////        QRCodeEncoder qrCodeEncoder = new QRCodeEncoder(Utils.genGuid(),
+////                null,
+////                Contents.Type.TEXT,
+////                BarcodeFormat.QR_CODE.toString(),
+////                600);
+////        try {
+////            Bitmap bitmap = qrCodeEncoder.encodeAsBitmap();
+////            ImageView myImage = (ImageView) findViewById(R.id.tututu);
+////            myImage.setImageBitmap(bitmap);
+////        } catch (WriterException e) {
+////            e.printStackTrace();
+////        }
+//
+//
+//    }
+
     private void startMainActivity() {
         setContentView(R.layout.activity_main);
 
@@ -183,6 +216,16 @@ public class MainActivity extends Activity {
         super.onActivityResult(reqCode, resultCode, data);
 
         switch (reqCode) {
+//            case IntentIntegrator.REQUEST_CODE:
+//                IntentResult result =
+//                        IntentIntegrator.parseActivityResult(reqCode, resultCode, data);
+//                if (result != null) {
+//                    String contents = result.getContents();
+//                    if (contents != null) {
+////                        showDialog(R.string.result_succeeded, contents);
+//                    }
+//                }
+//                break;
             case INPUT_PASSWORD:
                 if (resultCode == Activity.RESULT_OK) {
                     startMainActivity();
