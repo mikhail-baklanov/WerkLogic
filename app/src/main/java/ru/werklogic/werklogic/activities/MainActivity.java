@@ -35,6 +35,7 @@ import ru.werklogic.werklogic.commands.SpyModeSwitchCommand;
 import ru.werklogic.werklogic.commands.UpdateSensorCommand;
 import ru.werklogic.werklogic.dm.DataModel;
 import ru.werklogic.werklogic.dm.SensorState;
+import ru.werklogic.werklogic.dm.SensorTypeActivity;
 import ru.werklogic.werklogic.service.AutoUnbindServiceConnection;
 import ru.werklogic.werklogic.service.IWerkLogicService;
 import ru.werklogic.werklogic.service.RunnableWithParameter;
@@ -139,7 +140,7 @@ public class MainActivity extends Activity {
     }
 
     private void startSettingsActivity() {
-        Intent intent = new Intent(this, SettingsEditActivity.class);
+        Intent intent = new Intent(this, SensorTypeActivity.class);//SettingsEditActivity.class);
         startActivity(intent);
     }
 

@@ -27,6 +27,38 @@ public class SensorState implements Parcelable, Serializable {
     private boolean isAlert;
     private State state;
 
+    private int buttonsCount; // число каналов (кнопок) на датчике
+    private ActionType b1Action; // действие по нажатию первой кнопки / срабатыванию по первому каналу
+    private ActionType b2Action; // действие по нажатию второй кнопки / срабатыванию по второму каналу
+    private ActionType b3Action; // ...третьей...
+    private ActionType b4Action; // ...червертой...
+
+    public int getButtonsCount() {
+        return buttonsCount;
+    }
+
+    public void setButtonsCount(int buttonsCount) {
+        this.buttonsCount = buttonsCount;
+    }
+
+    public ActionType getAction(int buttonIndex /* нумерация от 0 */) {
+        switch (buttonIndex) {
+            case 1: return b2Action;
+            case 2: return b3Action;
+            case 3: return b4Action;
+            default: return b1Action;
+        }
+    }
+
+    public void setAction(int buttonIndex /* нумерация от 0 */, ActionType action) {
+        switch (buttonIndex) {
+            case 1: b2Action = action; break;
+            case 2: b3Action = action; break;
+            case 3: b4Action = action; break;
+            default: b1Action = action;
+        }
+    }
+
     public void setGuid(String guid) {
         this.guid = guid;
     }

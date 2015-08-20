@@ -70,6 +70,10 @@
             android:name=".activities.QRActivity"
             android:label="@string/title_activity_qr" >
         </activity>
+        <activity
+            android:name=".dm.SensorTypeActivity"
+            android:label="@string/title_activity_sensor_type" >
+        </activity>
     </application>
 
 </manifest>

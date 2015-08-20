@@ -50,5 +50,20 @@
     <string name="scan_cloud_button">Сканировать</string>
     <string name="title_activity_qr">QRActivity</string>
     <string name="cloud_info">Идентификатор облака</string>
+    <string name="title_activity_sensor_type">SensorTypeActivity</string>
+    <string name="gercon">Геркон</string>
+    <string name="action">Действие</string>
+    <string name="infra">Инфракрасный датчик</string>
+    <string name="brelok2">Брелок 2-х кнопочный</string>
+    <string name="button1_action">Действие первой кнопки</string>
+    <string name="button2_action">Действие второй кнопки</string>
+    <string name="brelok4">Брелок 4-х кнопочный</string>
+
+    <string-array name="action_type_array">
+        <item>Нет действия</item>
+        <item>Сирена</item>
+        <item>На охрану</item>
+        <item>С охраны</item>
+    </string-array>
 
 </resources>
