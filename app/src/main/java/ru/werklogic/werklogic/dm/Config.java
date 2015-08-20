@@ -63,7 +63,7 @@ public class Config implements Serializable, Parcelable {
         return cloudId;
     }
 
-    private void setCloudId(String cloudId) {
+    public void setCloudId(String cloudId) {
         this.cloudId = cloudId;
     }
 

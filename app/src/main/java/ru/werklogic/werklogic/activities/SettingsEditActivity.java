@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.util.List;
 
 import ru.werklogic.werklogic.R;
@@ -270,12 +273,37 @@ public class SettingsEditActivity extends Activity {
                 enterOldPasswordForReset();
             }
         });
+
+        findViewById(R.id.show_cloud_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCloud();
+            }
+        });
+
+        findViewById(R.id.scan_cloud_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scanCloud();
+            }
+        });
+
         refreshSettings();
 
         broadcastReceiver = new LocalBroadcastReceiver();
         broadcastFilter = new IntentFilter();
         broadcastFilter.addAction(DataModel.DATA_REFRESH_ACTION);
-        broadcastFilter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
+//        broadcastFilter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
+    }
+
+    private void scanCloud() {
+        IntentIntegrator.initiateScan(this, IntentIntegrator.QR_CODE_TYPES, "Сканирование идентификатора облака");
+    }
+
+    private void showCloud() {
+        Intent intent = new Intent(this, QRActivity.class);
+        intent.putExtra(QRActivity.QR_PARAM, dm.getCloudId());
+        startActivity(intent);
     }
 
     private void addSensor(String value) {
@@ -417,6 +445,18 @@ public class SettingsEditActivity extends Activity {
                     Toast.makeText(this, R.string.psw_is_changed, Toast.LENGTH_LONG).show();
                 }
                 break;
+
+            case IntentIntegrator.REQUEST_CODE:
+                IntentResult result =
+                        IntentIntegrator.parseActivityResult(reqCode, resultCode, data);
+                if (result != null) {
+                    String contents = result.getContents();
+                    if (contents != null) {
+                        dm.setCloudId(contents);
+                    }
+                }
+                break;
+
         }
     }
 

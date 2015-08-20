@@ -126,25 +126,6 @@ public class MainActivity extends Activity {
         }
     }
 
-//    public void scanQRCode() {
-//        IntentIntegrator.initiateScan(this, IntentIntegrator.QR_CODE_TYPES, "Сканирование идентификатора облака");
-//
-////        QRCodeEncoder qrCodeEncoder = new QRCodeEncoder(Utils.genGuid(),
-////                null,
-////                Contents.Type.TEXT,
-////                BarcodeFormat.QR_CODE.toString(),
-////                600);
-////        try {
-////            Bitmap bitmap = qrCodeEncoder.encodeAsBitmap();
-////            ImageView myImage = (ImageView) findViewById(R.id.tututu);
-////            myImage.setImageBitmap(bitmap);
-////        } catch (WriterException e) {
-////            e.printStackTrace();
-////        }
-//
-//
-//    }
-
     private void startMainActivity() {
         setContentView(R.layout.activity_main);
 
@@ -216,16 +197,6 @@ public class MainActivity extends Activity {
         super.onActivityResult(reqCode, resultCode, data);
 
         switch (reqCode) {
-//            case IntentIntegrator.REQUEST_CODE:
-//                IntentResult result =
-//                        IntentIntegrator.parseActivityResult(reqCode, resultCode, data);
-//                if (result != null) {
-//                    String contents = result.getContents();
-//                    if (contents != null) {
-////                        showDialog(R.string.result_succeeded, contents);
-//                    }
-//                }
-//                break;
             case INPUT_PASSWORD:
                 if (resultCode == Activity.RESULT_OK) {
                     startMainActivity();
@@ -260,22 +231,6 @@ public class MainActivity extends Activity {
                 // обновить кнопку постановки на охрану и список сенсоров
                 refreshAll();
             }
-//            else if (UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) {
-//                log("Получено событие отключения устройства");
-//                disconnectUsbDevice();
-//            }
         }
-
-//        public void disconnectUsbDevice() {
-//            final Activity activity = MainActivity.this;
-//            AutoUnbindServiceConnection connection = new AutoUnbindServiceConnection(activity, new RunnableWithParameter<IWerkLogicService>() {
-//                @Override
-//                public void run(IWerkLogicService service) {
-//                    service.disconnectUsbDevice();
-//                    Utils.getApplication(activity).getDataModel().clearSensors();
-//                }
-//            });
-//            bindService(new Intent(activity, WerkLogicService.class), connection, 0);
-//        }
     }
 }

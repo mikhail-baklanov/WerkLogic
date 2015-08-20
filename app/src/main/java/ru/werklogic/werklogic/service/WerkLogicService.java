@@ -46,6 +46,7 @@ public class WerkLogicService extends Service implements IWerkLogicService {
     private android.content.IntentFilter broadcastFilter;
     private DataModel dm;
     private WebSocketConnection mConnection;
+    private String cloudIdForWebSocketUrl;
 
     @Override
     public boolean connectUsbDevice(UsbDevice usbDevice) {
@@ -171,7 +172,8 @@ public class WerkLogicService extends Service implements IWerkLogicService {
         if (!mConnection.isConnected() && !connecting) {
             connecting = true;
             try {
-                final String wsUri = WS_BASE_URL + dm.getCloudId();
+                cloudIdForWebSocketUrl = dm.getCloudId();
+                final String wsUri = WS_BASE_URL + cloudIdForWebSocketUrl;
                 Utils.log("Попытка установить соединение по URL=" + wsUri);
                 mConnection.connect(wsUri, new WebSocketConnectionHandler() {
                     @Override
@@ -339,6 +341,10 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                 dm.unloadSensors();
                 log("Таблица датчиков очищена");
             } else if (DataModel.DATA_REFRESH_ACTION.equals(intent.getAction())) {
+                if (cloudIdForWebSocketUrl != null && !cloudIdForWebSocketUrl.equals(dm.getCloudId())) {
+                    mConnection.disconnect();
+                    checkConnection();
+                }
                 if (dm.isConfigInternal()) {
                     if (intent.getBooleanExtra(DataModel.SAVE_CONFIG_COMMAND_PARAM, false)) {
                         dm.saveConfig();

@@ -45,5 +45,10 @@
     <string name="loading">Загрузка...</string>
     <string name="sensor_events">Тек. датчик</string>
     <string name="all_events">Все датчики</string>
+    <string name="cloud">Облако</string>
+    <string name="show_cloud_button">Показать</string>
+    <string name="scan_cloud_button">Сканировать</string>
+    <string name="title_activity_qr">QRActivity</string>
+    <string name="cloud_info">Идентификатор облака</string>
 
 </resources>

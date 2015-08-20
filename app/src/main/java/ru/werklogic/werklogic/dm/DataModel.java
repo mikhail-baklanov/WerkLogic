@@ -112,6 +112,11 @@ public class DataModel {
         return config.getSensorsStates();
     }
 
+    public synchronized void setCloudId(String cloudId) {
+        config.setCloudId(cloudId);
+        sendDataRefreshEvent(false, true);
+    }
+
     public synchronized String getSensorsCheckSum() {
         return config.getCheckSum();
     }
