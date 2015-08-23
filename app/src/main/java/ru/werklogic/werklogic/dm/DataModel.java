@@ -3,11 +3,15 @@ package ru.werklogic.werklogic.dm;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.preference.PreferenceManager;
 
 import java.io.File;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import ru.werklogic.werklogic.dm.events.EventType;
 import ru.werklogic.werklogic.protocol.data.HardwareSensorInfo;
@@ -300,8 +304,34 @@ public class DataModel {
     }
 
     public synchronized void setSpyMode(boolean isSpyMode) {
+        stopSchedulingSpyMode();
         config.setSpyMode(isSpyMode);
         sendDataRefreshEvent(true, true);
+    }
+
+    private Timer scheduleSpyModeTimer = new Timer();
+    private Timer scheduleBeeperTimer = new Timer();
+
+    public synchronized void stopSchedulingSpyMode() {
+        scheduleSpyModeTimer.cancel();
+        scheduleBeeperTimer.cancel();
+    }
+
+    public synchronized void scheduleSpyMode(final boolean isSpyMode) {
+        scheduleBeeperTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                //beep
+                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
+                toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200);
+            }
+        }, 0, 500);
+        scheduleSpyModeTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                setSpyMode(isSpyMode);
+            }
+        }, 30000);
     }
 
     public boolean isSpyMode() {

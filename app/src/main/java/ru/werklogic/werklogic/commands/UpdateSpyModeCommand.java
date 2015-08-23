@@ -5,10 +5,10 @@ import android.os.Parcel;
 /**
  * Created by bmw on 14.08.2015.
  */
-public class SpyModeSwitchCommand extends BaseCommand implements android.os.Parcelable {
+public class UpdateSpyModeCommand extends BaseCommand implements android.os.Parcelable {
     private boolean spyMode;
 
-    public SpyModeSwitchCommand(boolean spyMode) {
+    public UpdateSpyModeCommand(boolean spyMode) {
         this.spyMode = spyMode;
     }
 
@@ -27,17 +27,17 @@ public class SpyModeSwitchCommand extends BaseCommand implements android.os.Parc
         dest.writeByte(spyMode ? (byte) 1 : (byte) 0);
     }
 
-    private SpyModeSwitchCommand(Parcel in) {
+    private UpdateSpyModeCommand(Parcel in) {
         this.spyMode = in.readByte() != 0;
     }
 
-    public static final Creator<SpyModeSwitchCommand> CREATOR = new Creator<SpyModeSwitchCommand>() {
-        public SpyModeSwitchCommand createFromParcel(Parcel source) {
-            return new SpyModeSwitchCommand(source);
+    public static final Creator<UpdateSpyModeCommand> CREATOR = new Creator<UpdateSpyModeCommand>() {
+        public UpdateSpyModeCommand createFromParcel(Parcel source) {
+            return new UpdateSpyModeCommand(source);
         }
 
-        public SpyModeSwitchCommand[] newArray(int size) {
-            return new SpyModeSwitchCommand[size];
+        public UpdateSpyModeCommand[] newArray(int size) {
+            return new UpdateSpyModeCommand[size];
         }
     };
 

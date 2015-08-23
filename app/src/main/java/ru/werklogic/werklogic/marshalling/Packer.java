@@ -6,7 +6,7 @@ import ru.werklogic.werklogic.commands.AddSmsCommand;
 import ru.werklogic.werklogic.commands.BaseCommand;
 import ru.werklogic.werklogic.commands.ConnectNewClientCommand;
 import ru.werklogic.werklogic.commands.DeleteSmsCommand;
-import ru.werklogic.werklogic.commands.SpyModeSwitchCommand;
+import ru.werklogic.werklogic.commands.UpdateSpyModeCommand;
 import ru.werklogic.werklogic.commands.UpdateConfigCommand;
 import ru.werklogic.werklogic.commands.UpdateSensorActivityCommand;
 import ru.werklogic.werklogic.commands.UpdateSensorCommand;
@@ -36,8 +36,8 @@ public class Packer {
         if (DeleteSmsCommand.class.getSimpleName().equals(className)) {
             return ParcelableUtils.unmarshall(bytes, DeleteSmsCommand.CREATOR);
         }
-        if (SpyModeSwitchCommand.class.getSimpleName().equals(className)) {
-            return ParcelableUtils.unmarshall(bytes, SpyModeSwitchCommand.CREATOR);
+        if (UpdateSpyModeCommand.class.getSimpleName().equals(className)) {
+            return ParcelableUtils.unmarshall(bytes, UpdateSpyModeCommand.CREATOR);
         }
         if (UpdateConfigCommand.class.getSimpleName().equals(className)) {
             return ParcelableUtils.unmarshall(bytes, UpdateConfigCommand.CREATOR);

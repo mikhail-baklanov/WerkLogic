@@ -1,41 +1,25 @@
 package ru.werklogic.werklogic.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.WriterException;
-import com.google.zxing.client.android.Contents;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-import com.google.zxing.qrcode.QRCodeWriter;
-
 import java.util.Date;
-import java.util.EnumMap;
 import java.util.List;
 
 import ru.werklogic.werklogic.R;
-import ru.werklogic.werklogic.commands.SpyModeSwitchCommand;
-import ru.werklogic.werklogic.commands.UpdateSensorCommand;
+import ru.werklogic.werklogic.commands.UpdateSpyModeCommand;
 import ru.werklogic.werklogic.dm.DataModel;
 import ru.werklogic.werklogic.dm.SensorState;
-import ru.werklogic.werklogic.dm.SensorTypeActivity;
 import ru.werklogic.werklogic.service.AutoUnbindServiceConnection;
 import ru.werklogic.werklogic.service.IWerkLogicService;
 import ru.werklogic.werklogic.service.RunnableWithParameter;
@@ -151,7 +135,7 @@ public class MainActivity extends Activity {
                 AutoUnbindServiceConnection connection = new AutoUnbindServiceConnection(MainActivity.this, new RunnableWithParameter<IWerkLogicService>() {
                     @Override
                     public void run(IWerkLogicService service) {
-                        service.processCommand(new SpyModeSwitchCommand(false));
+                        service.processCommand(new UpdateSpyModeCommand(false));
                     }
                 });
                 bindService(new Intent(MainActivity.this, WerkLogicService.class), connection, 0);
@@ -163,7 +147,7 @@ public class MainActivity extends Activity {
                 AutoUnbindServiceConnection connection = new AutoUnbindServiceConnection(MainActivity.this, new RunnableWithParameter<IWerkLogicService>() {
                     @Override
                     public void run(IWerkLogicService service) {
-                        service.processCommand(new SpyModeSwitchCommand(true));
+                        service.processCommand(new UpdateSpyModeCommand(true));
                     }
                 });
                 bindService(new Intent(MainActivity.this, WerkLogicService.class), connection, 0);

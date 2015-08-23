@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ru.werklogic.werklogic.BuildConfig;
 import ru.werklogic.werklogic.R;
 import ru.werklogic.werklogic.dm.events.EventStorage;
 import ru.werklogic.werklogic.dm.events.EventType;
@@ -21,47 +22,28 @@ import ru.werklogic.werklogic.utils.Utils;
  */
 public class SensorState implements Parcelable, Serializable {
 
+    public static final Parcelable.Creator<SensorState> CREATOR = new Parcelable.Creator<SensorState>() {
+        public SensorState createFromParcel(Parcel source) {
+            return new SensorState(source);
+        }
+
+        public SensorState[] newArray(int size) {
+            return new SensorState[size];
+        }
+    };
     private static final int MAX_RECENT_EVENTS_COUNT = 4;
     private String name;
-    private HardwareSensorInfo hardwareSensorInfo;
-    private boolean isAlert;
-    private State state;
 
-    private int buttonsCount; // число каналов (кнопок) на датчике
+    private HardwareSensorInfo hardwareSensorInfo; // 8+2+1 = 11 бит
+    private boolean isAlert; // 1 бит
+    private State state; // 3 бита
+    private int sensorTypeNumber; // 2 бита
+    // 4x3 = 12 бит
     private ActionType b1Action; // действие по нажатию первой кнопки / срабатыванию по первому каналу
     private ActionType b2Action; // действие по нажатию второй кнопки / срабатыванию по второму каналу
     private ActionType b3Action; // ...третьей...
     private ActionType b4Action; // ...червертой...
-
-    public int getButtonsCount() {
-        return buttonsCount;
-    }
-
-    public void setButtonsCount(int buttonsCount) {
-        this.buttonsCount = buttonsCount;
-    }
-
-    public ActionType getAction(int buttonIndex /* нумерация от 0 */) {
-        switch (buttonIndex) {
-            case 1: return b2Action;
-            case 2: return b3Action;
-            case 3: return b4Action;
-            default: return b1Action;
-        }
-    }
-
-    public void setAction(int buttonIndex /* нумерация от 0 */, ActionType action) {
-        switch (buttonIndex) {
-            case 1: b2Action = action; break;
-            case 2: b3Action = action; break;
-            case 3: b4Action = action; break;
-            default: b1Action = action;
-        }
-    }
-
-    public void setGuid(String guid) {
-        this.guid = guid;
-    }
+    // Итого: 11+1+3+2+12 = 29 бит
 
     private String guid;
     private List<Date> recentEvents;
@@ -70,11 +52,140 @@ public class SensorState implements Parcelable, Serializable {
         this.hardwareSensorInfo = s;
     }
 
+    private SensorState(Parcel in) {
+        this.name = in.readString();
+
+        // порядок полей соответствует порядку бит от старшего к младшим
+        int value = in.readInt();
+        byte sensorNumber = (byte) (value & 0xFF);
+        value >>= 8;
+        int button = value & 0b11;
+        value >>= 2;
+        boolean batteryHigh = (value & 1) != 0;
+        value >>= 1;
+        this.hardwareSensorInfo = new HardwareSensorInfo(sensorNumber, button, batteryHigh);
+        //
+        boolean isAlert = (value & 1) != 0;
+        value >>= 1;
+        this.isAlert = isAlert;
+        //
+        int stateNumber = value & 0b111;
+        value >>= 3;
+        this.state = stateNumber == 0 ? null : State.values()[stateNumber - 1];
+        //
+        int sensorTypeNumber = value & 0b11;
+        value >>= 2;
+        this.sensorTypeNumber = sensorTypeNumber;
+        //
+        for (int i = 0; i < 4; i++) {
+            int action = value & 0b111;
+            value >>= 3;
+            this.setAction(i, action == 0 ? null : ActionType.values()[action - 1]);
+        }
+
+//        this.hardwareSensorInfo = in.readParcelable(HardwareSensorInfo.class.getClassLoader());
+//        this.isAlert = in.readByte() != 0;
+//        int tmpState = in.readInt();
+//        this.state = tmpState == -1 ? null : State.values()[tmpState];
+
+        this.guid = in.readString();
+        this.recentEvents = new ArrayList<>();
+        in.readList(this.recentEvents, getClass().getClassLoader());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+
+        int value = 0;
+        //
+        if (BuildConfig.DEBUG && !(ActionType.values().length <= 7))
+            throw new AssertionError();
+        for (int i = 3; i >= 0; i--) {
+            value <<= 3;
+            ActionType actionType = getAction(i);
+            value |= actionType == null ? 0 : actionType.ordinal() + 1;
+        }
+        //
+        if (BuildConfig.DEBUG && !(sensorTypeNumber <= 3))
+            throw new AssertionError();
+        value <<= 2;
+        value |= sensorTypeNumber;
+        //
+        if (BuildConfig.DEBUG && !(State.values().length <= 7))
+            throw new AssertionError();
+        value <<= 3;
+        value |= state == null ? 0 : state.ordinal() + 1;
+        //
+        value <<= 1;
+        value |= isAlert ? 1 : 0;
+        //
+        value <<= 1;
+        value |= hardwareSensorInfo.isBatteryHigh() ? 1 : 0;
+        if (BuildConfig.DEBUG && !(hardwareSensorInfo.getButton() <= 3))
+            throw new AssertionError();
+        value <<= 2;
+        value |= hardwareSensorInfo.getButton();
+        value <<= 8;
+        if (BuildConfig.DEBUG && !(hardwareSensorInfo.getSensorNumber() <= 255))
+            throw new AssertionError();
+        value |= hardwareSensorInfo.getSensorNumber();
+
+        dest.writeInt(value);
+
+//        dest.writeParcelable(this.hardwareSensorInfo, 0);
+//        dest.writeByte(isAlert ? (byte) 1 : (byte) 0);
+//        dest.writeInt(this.state == null ? -1 : this.state.ordinal());
+
+        dest.writeString(this.guid);
+        dest.writeList(this.recentEvents);
+    }
+
+    public int getSensorTypeNumber() {
+        return sensorTypeNumber;
+    }
+
+    public void setSensorTypeNumber(int sensorTypeNumber) {
+        this.sensorTypeNumber = sensorTypeNumber;
+    }
+
+    public ActionType getAction(int buttonIndex /* нумерация от 0 */) {
+        switch (buttonIndex) {
+            case 1:
+                return b2Action;
+            case 2:
+                return b3Action;
+            case 3:
+                return b4Action;
+            default:
+                return b1Action;
+        }
+    }
+
+    public void setAction(int buttonIndex /* нумерация от 0 */, ActionType action) {
+        switch (buttonIndex) {
+            case 1:
+                b2Action = action;
+                break;
+            case 2:
+                b3Action = action;
+                break;
+            case 3:
+                b4Action = action;
+                break;
+            default:
+                b1Action = action;
+        }
+    }
 
     public String getGuid() {
         if (guid == null)
             guid = Utils.genGuid();
         return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
     public State getState() {
@@ -170,45 +281,10 @@ public class SensorState implements Parcelable, Serializable {
         getRecentEvents();
     }
 
-    public static enum State implements Serializable {
-        NOT_INIT, IN_INIT_PROCESS, STEP1, STEP2, INIT_NOT_ACTIVE, INIT_ACTIVE
-    }
-
     @Override
     public int describeContents() {
         return 0;
     }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
-        dest.writeParcelable(this.hardwareSensorInfo, 0);
-        dest.writeByte(isAlert ? (byte) 1 : (byte) 0);
-        dest.writeInt(this.state == null ? -1 : this.state.ordinal());
-        dest.writeString(this.guid);
-        dest.writeList(this.recentEvents);
-    }
-
-    private SensorState(Parcel in) {
-        this.name = in.readString();
-        this.hardwareSensorInfo = in.readParcelable(HardwareSensorInfo.class.getClassLoader());
-        this.isAlert = in.readByte() != 0;
-        int tmpState = in.readInt();
-        this.state = tmpState == -1 ? null : State.values()[tmpState];
-        this.guid = in.readString();
-        this.recentEvents = new ArrayList<>();
-        in.readList(this.recentEvents, getClass().getClassLoader());
-    }
-
-    public static final Parcelable.Creator<SensorState> CREATOR = new Parcelable.Creator<SensorState>() {
-        public SensorState createFromParcel(Parcel source) {
-            return new SensorState(source);
-        }
-
-        public SensorState[] newArray(int size) {
-            return new SensorState[size];
-        }
-    };
 
     @Override
     public String toString() {
@@ -220,5 +296,9 @@ public class SensorState implements Parcelable, Serializable {
                 ", guid='" + guid + '\'' +
                 ", recentEvents=" + recentEvents +
                 '}';
+    }
+
+    public static enum State implements Serializable {
+        NOT_INIT, IN_INIT_PROCESS, STEP1, STEP2, INIT_NOT_ACTIVE, INIT_ACTIVE
     }
 }
