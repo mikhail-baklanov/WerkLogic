@@ -3,16 +3,17 @@ package ru.werklogic.werklogic.dm;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
-import android.media.ToneGenerator;
+import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import ru.werklogic.werklogic.R;
 import ru.werklogic.werklogic.dm.events.EventType;
 import ru.werklogic.werklogic.protocol.data.HardwareSensorInfo;
 import ru.werklogic.werklogic.utils.Utils;
@@ -29,7 +30,7 @@ public class DataModel {
     private static final String PREF_KEY_LAST_CHECKSUM = "last_checksum";
 
     private static final String PREF_KEY_PASSWORD = "password";
-    private final Context c;
+    private final Context context;
 
     private Config config = new Config();
 
@@ -37,11 +38,15 @@ public class DataModel {
         return config;
     }
 
+    public void setConfigInternal(boolean isConfigInternal) {
+        this.isConfigInternal = isConfigInternal;
+    }
+
     private boolean isConfigInternal = false;
     private boolean wsConnectionStatus;
 
-    DataModel(Context c) {
-        this.c = c;
+    DataModel(Context context) {
+        this.context = context;
     }
 
     public boolean isConfigInternal() {
@@ -52,7 +57,7 @@ public class DataModel {
         Intent intent = new Intent(DataModel.DATA_REFRESH_ACTION);
         intent.putExtra(SAVE_CONFIG_COMMAND_PARAM, saveConfigFlag);
         intent.putExtra(SEND_EXTERNAL_REFRESH_COMMAND_PARAM, isSendExternalRefreshCommand);
-        c.sendBroadcast(intent);
+        context.sendBroadcast(intent);
     }
 
     public synchronized SensorState getSensorByHardwareSensorInfo(HardwareSensorInfo hardwareSensorInfo) {
@@ -97,19 +102,23 @@ public class DataModel {
         }
     }
 
-    public synchronized void saveEvent(HardwareSensorInfo s, Date d) {
-        SensorState ss = getSensorByHardwareSensorInfo(s);
-        if (ss == null) {
-            Utils.log("Не найден датчик, которому принадлежат данные");
-            return;
-        }
-        if (!ss.isActive()) {
-            Utils.log("Датчик не активен");
-            return;
-        }
+    public synchronized void saveEvent(SensorState ss, Date d) {
 //        Utils.log("Сохранение события в файле. SensorId=" + ss.getGuid() + ", date=" + d + ", ALERT");
         ss.saveEvent(d, EventType.ALERT);
         sendDataRefreshEvent(true, false);
+    }
+
+    public synchronized SensorState preprocessEvent(HardwareSensorInfo s) {
+        SensorState ss = getSensorByHardwareSensorInfo(s);
+        if (ss == null) {
+            Utils.log("Не найден датчик, которому принадлежат данные");
+            return null;
+        }
+        if (!ss.isActive()) {
+            Utils.log("Датчик не активен");
+            return null;
+        }
+        return ss;
     }
 
     public synchronized List<SensorState> getSensorsStates() {
@@ -161,14 +170,14 @@ public class DataModel {
     }
 
     public String getLastCheckSum() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String checkSum = prefs.getString(PREF_KEY_LAST_CHECKSUM, null);
         return checkSum;
     }
 
     private void setLastCheckSum(String checkSum) {
         SharedPreferences prefs = PreferenceManager
-                .getDefaultSharedPreferences(c);
+                .getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PREF_KEY_LAST_CHECKSUM, checkSum);
         editor.apply();
@@ -194,14 +203,14 @@ public class DataModel {
     }
 
     public String getPassword() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String password = prefs.getString(PREF_KEY_PASSWORD, null);
         return password;
     }
 
     public void setPassword(String password) {
         SharedPreferences prefs = PreferenceManager
-                .getDefaultSharedPreferences(c);
+                .getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PREF_KEY_PASSWORD, password);
         editor.apply();
@@ -311,25 +320,35 @@ public class DataModel {
 
     private Timer scheduleSpyModeTimer = new Timer();
     private Timer scheduleBeeperTimer = new Timer();
+    private MediaPlayer spyPlayer;
 
     public synchronized void stopSchedulingSpyMode() {
         scheduleSpyModeTimer.cancel();
         scheduleBeeperTimer.cancel();
     }
 
-    public synchronized void scheduleSpyMode(final boolean isSpyMode) {
+    public synchronized void scheduleSpyMode() {
         scheduleBeeperTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 //beep
-                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-                toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200);
+                if (spyPlayer == null) {
+                    spyPlayer = MediaPlayer.create(context, R.raw.spy1_cut);
+                    try {
+                        spyPlayer.prepare();
+                    } catch (IllegalStateException | IOException e) {
+                        Utils.log("Исключение при выполнении spyPlayer.prepare(): " + Utils.getStackTrace(e));
+                    }
+                    spyPlayer.setVolume(1.0f, 1.0f);
+                }
+                if (!spyPlayer.isPlaying())
+                    spyPlayer.start();
             }
         }, 0, 500);
         scheduleSpyModeTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                setSpyMode(isSpyMode);
+                setSpyMode(true);
             }
         }, 30000);
     }
@@ -340,5 +359,14 @@ public class DataModel {
 
     public String getCloudId() {
         return config.getCloudId();
+    }
+
+    public void setSensorType(HardwareSensorInfo s, int sensorTypeNumber, int action1, int action2, int action3, int action4) {
+        SensorState ss = getSensorByHardwareSensorInfo(s);
+        if (ss != null) {
+            ss.setSensorType(sensorTypeNumber, action1, action2, action3, action4);
+            sendDataRefreshEvent(true, true);
+        }
+
     }
 }

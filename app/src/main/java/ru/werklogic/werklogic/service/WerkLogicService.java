@@ -19,10 +19,15 @@ import java.util.TimerTask;
 import de.tavendo.autobahn.WebSocketConnection;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 import de.tavendo.autobahn.WebSocketException;
+import ru.werklogic.werklogic.activities.SensorTypeActivity;
 import ru.werklogic.werklogic.commands.BaseCommand;
 import ru.werklogic.werklogic.commands.ConnectNewClientCommand;
 import ru.werklogic.werklogic.commands.UpdateConfigCommand;
+import ru.werklogic.werklogic.commands.UpdateSpyModeCommand;
+import ru.werklogic.werklogic.dm.ActionType;
 import ru.werklogic.werklogic.dm.DataModel;
+import ru.werklogic.werklogic.dm.SensorState;
+import ru.werklogic.werklogic.dm.SensorType;
 import ru.werklogic.werklogic.marshalling.Packer;
 import ru.werklogic.werklogic.protocol.channel.UsbChannel;
 import ru.werklogic.werklogic.protocol.data.HardwareSensorInfo;
@@ -60,7 +65,39 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                         if (data instanceof HardwareSensorInfo) {
                             Utils.log("Данные распознаны");
                             HardwareSensorInfo hwi = (HardwareSensorInfo) data;
-                            dm.saveEvent(hwi, new Date());
+                            SensorState s = dm.preprocessEvent(hwi);
+                            if (s != null) {
+                                int sensorTypeNumber = s.getSensorTypeNumber();
+                                SensorType sensorType = SensorType.getSensorTypeByNumber(sensorTypeNumber);
+                                if (sensorType != null) {
+                                    if (hwi.getButton() < sensorType.getButtonsCount()) {
+                                        ActionType actionType = s.getAction(hwi.getButton());
+                                        if (ActionType.SWITCH.equals(actionType)) {
+                                            if (dm.isSpyMode())
+                                                actionType = ActionType.TO_NORMAL;
+                                            else
+                                                actionType = ActionType.TO_SPY;
+                                        }
+                                        switch (actionType) {
+                                            case NONE:
+                                            case SWITCH:
+                                                break;
+                                            case SIGNAL:
+                                                dm.saveEvent(s, new Date());
+                                                break;
+                                            case TO_SPY:
+                                                if (dm.isConfigInternal())
+                                                    dm.scheduleSpyMode();
+                                                else
+                                                    processCommand(new UpdateSpyModeCommand(true));
+                                                break;
+                                            case TO_NORMAL:
+                                                processCommand(new UpdateSpyModeCommand(false));
+                                                break;
+                                        }
+                                    }
+                                }
+                            }
                         } else {
                             Utils.log("Данные не распознаны");
                         }

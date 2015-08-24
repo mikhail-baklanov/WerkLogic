@@ -13,6 +13,16 @@ public class UpdateSpyModeCommand extends BaseCommand implements android.os.Parc
     }
 
     @Override
+    public BaseCommand executeLocalOnInternalConfig() {
+        if (dataModel.isSpyMode() && !spyMode)
+            dataModel.setSpyMode(spyMode);
+        else
+        if (!dataModel.isSpyMode() && spyMode)
+            dataModel.scheduleSpyMode();
+        return null;
+    }
+
+    @Override
     public void executeOnInternalConfig() {
         dataModel.setSpyMode(spyMode);
     }

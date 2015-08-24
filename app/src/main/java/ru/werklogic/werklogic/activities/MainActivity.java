@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -88,9 +90,11 @@ public class MainActivity extends Activity {
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
-                        intent.putExtra(HistoryFragment.SENSOR, (Parcelable)item);
-                        startActivity(intent);
+                        if (dm.isConfigInternal()) {
+                            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                            intent.putExtra(HistoryFragment.SENSOR, (Parcelable) item);
+                            startActivity(intent);
+                        }
                     }
                 });
                 layout.addView(v);
@@ -124,7 +128,7 @@ public class MainActivity extends Activity {
     }
 
     private void startSettingsActivity() {
-        Intent intent = new Intent(this, SensorTypeActivity.class);//SettingsEditActivity.class);
+        Intent intent = new Intent(this, SettingsEditActivity.class); // SensorTypeActivity.class);
         startActivity(intent);
     }
 

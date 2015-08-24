@@ -18,7 +18,11 @@ import ru.werklogic.werklogic.dm.SensorType;
 
 public class SensorTypeActivity extends Activity {
 
-    public static final String SENSOR_PARAM = "sensor";
+    public static final String SENSOR_TYPE_NUMBER_PARAM = "sensor_type_number";
+    public static final String ACTION1_PARAM = "action1";
+    public static final String ACTION2_PARAM = "action2";
+    public static final String ACTION3_PARAM = "action3";
+    public static final String ACTION4_PARAM = "action4";
     private List<SensorViewInfo> sensorViewInfos = new ArrayList<>();
     private List<ActionViewInfo> actionViewInfos = new ArrayList<>();
 
@@ -50,8 +54,8 @@ public class SensorTypeActivity extends Activity {
                 (Spinner) findViewById(R.id.action4_spinner)));
 
         initListeners();
-        SensorState s = getIntent().getParcelableExtra(SENSOR_PARAM);
-        initFormData(s);
+        int sensorTypeNumber = getIntent().getIntExtra(SENSOR_TYPE_NUMBER_PARAM, 0);
+        selectSensorType(sensorTypeNumber);
     }
 
     private void initListeners() {
@@ -85,11 +89,6 @@ public class SensorTypeActivity extends Activity {
             }
         }
     }
-
-    private void initFormData(SensorState s) {
-        selectSensorType(s == null ? 0 : s.getSensorTypeNumber());
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

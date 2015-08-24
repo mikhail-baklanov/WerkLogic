@@ -298,6 +298,14 @@ public class SensorState implements Parcelable, Serializable {
                 '}';
     }
 
+    public void setSensorType(int sensorTypeNumber, int action1, int action2, int action3, int action4) {
+        this.sensorTypeNumber = sensorTypeNumber;
+        this.b1Action = ActionType.values()[action1];
+        this.b2Action = ActionType.values()[action2];
+        this.b3Action = ActionType.values()[action3];
+        this.b4Action = ActionType.values()[action4];
+    }
+
     public static enum State implements Serializable {
         NOT_INIT, IN_INIT_PROCESS, STEP1, STEP2, INIT_NOT_ACTIVE, INIT_ACTIVE
     }
