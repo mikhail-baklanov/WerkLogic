@@ -145,10 +145,6 @@ public class SensorState implements Parcelable, Serializable {
         return sensorTypeNumber;
     }
 
-    public void setSensorTypeNumber(int sensorTypeNumber) {
-        this.sensorTypeNumber = sensorTypeNumber;
-    }
-
     public ActionType getAction(int buttonIndex /* нумерация от 0 */) {
         switch (buttonIndex) {
             case 1:
@@ -162,7 +158,7 @@ public class SensorState implements Parcelable, Serializable {
         }
     }
 
-    public void setAction(int buttonIndex /* нумерация от 0 */, ActionType action) {
+    private void setAction(int buttonIndex /* нумерация от 0 */, ActionType action) {
         switch (buttonIndex) {
             case 1:
                 b2Action = action;

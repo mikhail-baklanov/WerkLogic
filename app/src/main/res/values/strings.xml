@@ -60,6 +60,7 @@
     <string name="brelok4">Брелок 4-х кнопочный</string>
     <string name="button3_action">Действие третьей кнопки</string>
     <string name="button4_action">Действие четвертой кнопки</string>
+    <string name="shortGerkonName">G</string>
 
     <string-array name="action_type_array">
         <item>Нет действия</item>

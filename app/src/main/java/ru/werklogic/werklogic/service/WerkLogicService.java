@@ -68,7 +68,7 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                             SensorState s = dm.preprocessEvent(hwi);
                             if (s != null) {
                                 int sensorTypeNumber = s.getSensorTypeNumber();
-                                SensorType sensorType = SensorType.getSensorTypeByNumber(sensorTypeNumber);
+                                SensorType sensorType = SensorType.values()[sensorTypeNumber];
                                 if (sensorType != null) {
                                     if (hwi.getButton() < sensorType.getButtonsCount()) {
                                         ActionType actionType = s.getAction(hwi.getButton());

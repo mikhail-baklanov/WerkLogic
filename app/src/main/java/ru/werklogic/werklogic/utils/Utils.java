@@ -226,6 +226,10 @@ public class Utils {
                 ru.werklogic.werklogic.protocol.utils.Utils.byte2hex(b4);
     }
 
+    public static boolean isTestMode() {
+        return true;
+    }
+
     public static interface LogWriter {
         void write(String message);
     }

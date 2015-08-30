@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.hardware.usb.UsbManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,6 +27,7 @@ import ru.werklogic.werklogic.commands.UpdateSensorCommand;
 import ru.werklogic.werklogic.commands.UpdateSmsCommand;
 import ru.werklogic.werklogic.dm.DataModel;
 import ru.werklogic.werklogic.dm.SensorState;
+import ru.werklogic.werklogic.dm.SensorType;
 import ru.werklogic.werklogic.dm.SmsItem;
 import ru.werklogic.werklogic.protocol.data.HardwareSensorInfo;
 import ru.werklogic.werklogic.protocol.facade.Rec31Facade;
@@ -48,11 +48,13 @@ public class SettingsEditActivity extends Activity {
     private static final int ENTER_PASSWORD = 2;
     private static final int REENTER_PASSWORD = 3;
     private static final int ENTER_OLD_PASSWORD_FOR_RESET = 4;
-    private static final int SELECT_SENSOR_TYPE = 5;
+    private static final int SELECT_SENSOR_TYPE_TO_ADD = 5;
+    private static final int SELECT_SENSOR_TYPE_TO_EDIT = 6;
     private DataModel dm;
     private String newPassword;
     private BroadcastReceiver broadcastReceiver;
     private android.content.IntentFilter broadcastFilter;
+    private SensorState currentSensor;
 
     @Override
     protected void onPause() {
@@ -146,6 +148,13 @@ public class SettingsEditActivity extends Activity {
             for (final SensorState item : list) {
                 View v = inflater.inflate(R.layout.sensor_edit_one, layout, false);
                 ((TextView) v.findViewById(R.id.sensor_name)).setText(item.getValidName(this));
+                v.findViewById(R.id.sensor_type).setBackgroundResource(SensorType.values()[item.getSensorTypeNumber()].getImageResId());
+                v.findViewById(R.id.sensor_type).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        changeSensorType(item);
+                    }
+                });
                 Utils.updateSensorStateView(v, item.getState());
                 v.findViewById(R.id.sensor_name).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -193,6 +202,17 @@ public class SettingsEditActivity extends Activity {
         }
     }
 
+    private void changeSensorType(SensorState item) {
+        currentSensor = item;
+        Intent intent = new Intent(SettingsEditActivity.this,
+                SensorTypeActivity.class);
+        intent.putExtra(SensorTypeActivity.SENSOR_TYPE_NUMBER_PARAM, item.getSensorTypeNumber());
+        for (int i = 0; i < SensorType.values()[item.getSensorTypeNumber()].getButtonsCount(); i++) {
+            intent.putExtra(SensorTypeActivity.ACTION_PARAM + (i + 1), item.getAction(i).ordinal());
+        }
+        startActivityForResult(intent, SELECT_SENSOR_TYPE_TO_EDIT);
+    }
+
     private void deleteSensor(List<SensorState> list, SensorState item) {
         final HardwareSensorInfo hwi = item.getHardwareSensorInfo();
         AutoUnbindServiceConnection connection = new AutoUnbindServiceConnection(this, new RunnableWithParameter<IWerkLogicService>() {
@@ -238,27 +258,30 @@ public class SettingsEditActivity extends Activity {
         findViewById(R.id.btnAddSms).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextEditDialogFragment dialog = new TextEditDialogFragment(
-                        getString(R.string.addSms), getString(R.string.labelSms), "", getString(R.string.btnCreate), getString(R.string.btnCancel), new TextEditDialogFragment.Listener() {
-                    @Override
-                    public void onYesClick(String oldValue, String value, Dialog dialog) {
-                        if (value != null && value.trim().length() > 0) {
-                            addSms(value);
+                if (dm.isConfigInternal()) {
+                    TextEditDialogFragment dialog = new TextEditDialogFragment(
+                            getString(R.string.addSms), getString(R.string.labelSms), "",
+                            getString(R.string.btnCreate), getString(R.string.btnCancel), new TextEditDialogFragment.Listener() {
+                        @Override
+                        public void onYesClick(String oldValue, String value, Dialog dialog) {
+                            if (value != null && value.trim().length() > 0) {
+                                addSms(value);
+                            }
+                            dialog.cancel();
                         }
-                        dialog.cancel();
-                    }
-                });
-                dialog.show(getFragmentManager(), null);
+                    });
+                    dialog.show(getFragmentManager(), null);
+                }
             }
         });
         findViewById(R.id.btnAddSensor).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (dm.isConfigInternal()) {
+                if (Utils.isTestMode() || dm.isConfigInternal()) {
                     Intent intent = new Intent(SettingsEditActivity.this,
                             SensorTypeActivity.class);
                     intent.putExtra(SensorTypeActivity.SENSOR_TYPE_NUMBER_PARAM, 0);
-                    startActivityForResult(intent, SELECT_SENSOR_TYPE);
+                    startActivityForResult(intent, SELECT_SENSOR_TYPE_TO_ADD);
                 }
             }
         });
@@ -299,7 +322,6 @@ public class SettingsEditActivity extends Activity {
         broadcastReceiver = new LocalBroadcastReceiver();
         broadcastFilter = new IntentFilter();
         broadcastFilter.addAction(DataModel.DATA_REFRESH_ACTION);
-//        broadcastFilter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
     }
 
     private void scanCloud() {
@@ -467,7 +489,19 @@ public class SettingsEditActivity extends Activity {
                     }
                 }
                 break;
-            case SELECT_SENSOR_TYPE:
+
+            case SELECT_SENSOR_TYPE_TO_EDIT:
+                if (resultCode == Activity.RESULT_OK) {
+                    dm.setSensorActions(currentSensor.getHardwareSensorInfo(),
+                            data.getIntExtra(SensorTypeActivity.SENSOR_TYPE_NUMBER_PARAM, 0),
+                            data.getIntExtra(SensorTypeActivity.ACTION1_PARAM, 0),
+                            data.getIntExtra(SensorTypeActivity.ACTION2_PARAM, 0),
+                            data.getIntExtra(SensorTypeActivity.ACTION3_PARAM, 0),
+                            data.getIntExtra(SensorTypeActivity.ACTION4_PARAM, 0)
+                    );
+                }
+                break;
+            case SELECT_SENSOR_TYPE_TO_ADD:
                 if (resultCode == Activity.RESULT_OK) {
                     TextEditDialogFragment dialog = new TextEditDialogFragment(
                             getString(R.string.addSensor), getString(R.string.labelSensor), "",
@@ -479,7 +513,7 @@ public class SettingsEditActivity extends Activity {
                                     data.getIntExtra(SensorTypeActivity.ACTION2_PARAM, 0),
                                     data.getIntExtra(SensorTypeActivity.ACTION3_PARAM, 0),
                                     data.getIntExtra(SensorTypeActivity.ACTION4_PARAM, 0)
-                                    );
+                            );
                             dialog.cancel();
                         }
                     });

@@ -30,10 +30,15 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/sensor_edit_one.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="cde" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: ru.werklogic.werklogic" />
   </component>
   <component name="ChangeListManager">
@@ -90,8 +95,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -102,80 +107,119 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="3400">
-              <caret line="154" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="3094">
+              <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsEditActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8274" max-vertical-offset="9316">
+              <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
               <folding>
-                <element signature="e#3455#3922#0" expanded="true" />
-                <element signature="e#3903#3904#0" expanded="true" />
-                <element signature="e#4329#4365#0" expanded="true" />
-                <element signature="e#4678#4835#0" expanded="true" />
-                <element signature="e#4824#4825#0" expanded="true" />
-                <element signature="e#5128#5718#0" expanded="true" />
-                <element signature="e#5329#5593#0" expanded="true" />
-                <element signature="e#5574#5575#0" expanded="true" />
-                <element signature="e#5707#5708#0" expanded="true" />
-                <element signature="e#5778#6367#0" expanded="true" />
-                <element signature="e#5979#6242#0" expanded="true" />
-                <element signature="e#6223#6224#0" expanded="true" />
-                <element signature="e#6356#6357#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2846#2866#0" expanded="true" />
+                <element signature="e#2869#2888#0" expanded="true" />
+                <element signature="e#3725#4545#0" expanded="true" />
+                <element signature="e#3953#3982#0" expanded="true" />
+                <element signature="e#3984#4012#0" expanded="true" />
+                <element signature="e#4032#4061#0" expanded="true" />
+                <element signature="e#4063#4092#0" expanded="true" />
+                <element signature="e#4094#4437#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+                <element signature="e#4526#4527#0" expanded="true" />
+                <element signature="e#4620#4836#0" expanded="true" />
+                <element signature="e#4817#4818#0" expanded="true" />
+                <element signature="e#4905#5445#0" expanded="true" />
+                <element signature="e#5098#5134#0" expanded="true" />
+                <element signature="e#5136#5162#0" expanded="true" />
+                <element signature="e#5164#5193#0" expanded="true" />
+                <element signature="e#5195#5402#0" expanded="true" />
+                <element signature="e#5375#5376#0" expanded="true" />
+                <element signature="e#5426#5427#0" expanded="true" />
+                <element signature="e#6439#6635#0" expanded="true" />
+                <element signature="e#6616#6617#0" expanded="true" />
+                <element signature="e#6771#7598#0" expanded="true" />
+                <element signature="e#6999#7031#0" expanded="true" />
+                <element signature="e#7033#7064#0" expanded="true" />
+                <element signature="e#7082#7111#0" expanded="true" />
+                <element signature="e#7113#7142#0" expanded="true" />
+                <element signature="e#7144#7490#0" expanded="true" />
+                <element signature="e#7463#7464#0" expanded="true" />
+                <element signature="e#7579#7580#0" expanded="true" />
+                <element signature="e#7670#7995#0" expanded="true" />
+                <element signature="e#7976#7977#0" expanded="true" />
+                <element signature="e#8070#8291#0" expanded="true" />
+                <element signature="e#8272#8273#0" expanded="true" />
+                <element signature="e#8360#8912#0" expanded="true" />
+                <element signature="e#8553#8592#0" expanded="true" />
+                <element signature="e#8594#8620#0" expanded="true" />
+                <element signature="e#8622#8651#0" expanded="true" />
+                <element signature="e#8653#8869#0" expanded="true" />
+                <element signature="e#8842#8843#0" expanded="true" />
+                <element signature="e#8893#8894#0" expanded="true" />
+                <element signature="e#9786#10085#0" expanded="true" />
+                <element signature="e#10074#10075#0" expanded="true" />
+                <element signature="e#10342#10599#0" expanded="true" />
+                <element signature="e#10588#10589#0" expanded="true" />
+                <element signature="e#10874#11127#0" expanded="true" />
+                <element signature="e#11116#11117#0" expanded="true" />
+                <element signature="e#11495#11523#0" expanded="true" />
+                <element signature="e#11583#12505#0" expanded="true" />
+                <element signature="e#11832#11858#0" expanded="true" />
+                <element signature="e#11860#11888#0" expanded="true" />
+                <element signature="e#11922#11951#0" expanded="true" />
+                <element signature="e#11953#11982#0" expanded="true" />
+                <element signature="e#11984#12400#0" expanded="true" />
+                <element signature="e#12377#12378#0" expanded="true" />
+                <element signature="e#12494#12495#0" expanded="true" />
+                <element signature="e#12567#13064#0" expanded="true" />
+                <element signature="e#13053#13054#0" expanded="true" />
+                <element signature="e#13131#13408#0" expanded="true" />
+                <element signature="e#13397#13398#0" expanded="true" />
+                <element signature="e#13474#13634#0" expanded="true" />
+                <element signature="e#13623#13624#0" expanded="true" />
+                <element signature="e#13702#13847#0" expanded="true" />
+                <element signature="e#13836#13837#0" expanded="true" />
+                <element signature="e#13915#14060#0" expanded="true" />
+                <element signature="e#14049#14050#0" expanded="true" />
+                <element signature="e#15298#15506#0" expanded="true" />
+                <element signature="e#15495#15496#0" expanded="true" />
+                <element signature="e#15696#17053#0" expanded="true" />
+                <element signature="e#17042#17043#0" expanded="true" />
+                <element signature="e#17433#17471#0" expanded="true" />
+                <element signature="e#17840#17878#0" expanded="true" />
+                <element signature="e#18120#18346#0" expanded="true" />
+                <element signature="e#18335#18336#0" expanded="true" />
+                <element signature="e#18570#18789#0" expanded="true" />
+                <element signature="e#18778#18779#0" expanded="true" />
+                <element signature="e#19010#19246#0" expanded="true" />
+                <element signature="e#19235#19236#0" expanded="true" />
+                <element signature="e#20222#20262#0" expanded="true" />
+                <element signature="e#20813#20836#0" expanded="true" />
+                <element signature="e#22214#22243#0" expanded="true" />
+                <element signature="e#22245#22276#0" expanded="true" />
+                <element signature="e#22310#22339#0" expanded="true" />
+                <element signature="e#22341#22370#0" expanded="true" />
+                <element signature="e#22372#23138#0" expanded="true" />
+                <element signature="e#23115#23116#0" expanded="true" />
+                <element signature="e#23436#23474#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsEditActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java">
+      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76" vertical-offset="4369" max-vertical-offset="7769">
-              <caret line="321" column="30" selection-start-line="321" selection-start-column="30" selection-end-line="321" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3016" max-vertical-offset="3842">
+              <caret line="229" column="19" selection-start-line="229" selection-start-column="19" selection-end-line="229" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2734#2754#0" expanded="true" />
-                <element signature="e#2757#2776#0" expanded="true" />
-                <element signature="e#3841#3870#0" expanded="true" />
-                <element signature="e#3872#3900#0" expanded="true" />
-                <element signature="e#3920#3949#0" expanded="true" />
-                <element signature="e#3951#3980#0" expanded="true" />
-                <element signature="e#4986#5022#0" expanded="true" />
-                <element signature="e#5024#5050#0" expanded="true" />
-                <element signature="e#5052#5081#0" expanded="true" />
-                <element signature="e#6483#6515#0" expanded="true" />
-                <element signature="e#6517#6548#0" expanded="true" />
-                <element signature="e#6566#6595#0" expanded="true" />
-                <element signature="e#6597#6626#0" expanded="true" />
-                <element signature="e#7154#7479#0" expanded="true" />
-                <element signature="e#7460#7461#0" expanded="true" />
-                <element signature="e#8037#8076#0" expanded="true" />
-                <element signature="e#8078#8104#0" expanded="true" />
-                <element signature="e#8106#8135#0" expanded="true" />
-                <element signature="e#10404#10432#0" expanded="true" />
-                <element signature="e#10688#10714#0" expanded="true" />
-                <element signature="e#10716#10744#0" expanded="true" />
-                <element signature="e#10750#10779#0" expanded="true" />
-                <element signature="e#10781#10810#0" expanded="true" />
-                <element signature="e#11341#11809#0" expanded="true" />
-                <element signature="e#11798#11799#0" expanded="true" />
-                <element signature="e#11876#12153#0" expanded="true" />
-                <element signature="e#12142#12143#0" expanded="true" />
-                <element signature="e#12219#12379#0" expanded="true" />
-                <element signature="e#12368#12369#0" expanded="true" />
-                <element signature="e#12447#12592#0" expanded="true" />
-                <element signature="e#12581#12582#0" expanded="true" />
-                <element signature="e#12660#12805#0" expanded="true" />
-                <element signature="e#12794#12795#0" expanded="true" />
-                <element signature="e#14119#14327#0" expanded="true" />
-                <element signature="e#14316#14317#0" expanded="true" />
-                <element signature="e#16254#16292#0" expanded="true" />
-                <element signature="e#16661#16699#0" expanded="true" />
-                <element signature="e#19043#19083#0" expanded="true" />
-                <element signature="e#19634#19657#0" expanded="true" />
-                <element signature="e#20358#20387#0" expanded="true" />
-                <element signature="e#20389#20420#0" expanded="true" />
-                <element signature="e#20454#20483#0" expanded="true" />
-                <element signature="e#20485#20514#0" expanded="true" />
-                <element signature="e#20516#21290#0" expanded="true" />
-                <element signature="e#21267#21268#0" expanded="true" />
-                <element signature="e#21588#21626#0" expanded="true" />
+                <element signature="e#8543#8544#0" expanded="true" />
+                <element signature="e#8570#8571#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,25 +228,8 @@
       <file leaf-file-name="WerkLogicService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="5967">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding>
-                <element signature="e#5402#5403#0" expanded="true" />
-                <element signature="e#5432#5433#0" expanded="true" />
-                <element signature="e#5482#5483#0" expanded="true" />
-                <element signature="e#5531#5532#0" expanded="true" />
-                <element signature="e#7304#7305#0" expanded="true" />
-                <element signature="e#7333#7334#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="5865">
+              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -211,46 +238,66 @@
       <file leaf-file-name="SensorTypeActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
-              <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensorType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="1292">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1538" max-vertical-offset="3128">
+              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3255#3443#0" expanded="true" />
+                <element signature="e#3428#3429#0" expanded="true" />
+                <element signature="e#3512#3660#0" expanded="true" />
+                <element signature="e#3649#3650#0" expanded="true" />
+                <element signature="e#6215#6216#0" expanded="true" />
+                <element signature="e#6243#6244#0" expanded="true" />
+                <element signature="e#6316#6317#0" expanded="true" />
+                <element signature="e#6344#6345#0" expanded="true" />
+                <element signature="e#6488#6489#0" expanded="true" />
+                <element signature="e#6526#6527#0" expanded="true" />
+                <element signature="e#6575#6576#0" expanded="true" />
+                <element signature="e#6621#6622#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorState.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorState.java">
+      <file leaf-file-name="activity_sensor_type.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="4709">
-              <caret line="45" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.4375" vertical-offset="3419" max-vertical-offset="3893">
+              <caret line="217" column="42" selection-start-line="217" selection-start-column="42" selection-end-line="217" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataModel.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.96" vertical-offset="964" max-vertical-offset="1343">
+              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataModel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4410" max-vertical-offset="5848">
-              <caret line="296" column="29" selection-start-line="296" selection-start-column="29" selection-end-line="296" selection-end-column="29" />
-              <folding>
-                <element signature="e#11071#11735#0" expanded="true" />
-                <element signature="e#11724#11725#0" expanded="true" />
-                <element signature="e#11784#11913#0" expanded="true" />
-                <element signature="e#11902#11903#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.55324674" vertical-offset="3901" max-vertical-offset="5848">
+              <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3553">
+              <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -867,7 +914,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/views/SettingsEditActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/views/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/views/DeviceAttachActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/events/EventType.java" />
@@ -888,7 +934,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSensorActivityCommand.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSensorCommand.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/marshalling/Packer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SmsItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateConfigCommand.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/DeviceAttachActivity.java" />
@@ -906,25 +951,27 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/action_type" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorTypeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorType.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/SpyModeSwitchCommand.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/sensor_edit_one.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorType.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorState.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1618" />
+    <option name="width" value="1612" />
     <option name="height" value="870" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -953,16 +1000,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -980,41 +1017,29 @@
               <option name="myItemId" value="WerkLogic" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WerkLogic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WerkLogic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1107,20 +1132,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WerkLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1380,15 +1391,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1618" height="870" extended-state="6" />
+    <frame x="-9" y="-9" width="1612" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32034633" sideWeight="0.57254905" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32034633" sideWeight="0.57254905" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3968254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3015873" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1402,14 +1414,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24645162" sideWeight="0.4978355" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24611399" sideWeight="0.4978355" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903226" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1439,32 +1450,55 @@
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java</url>
-          <line>334</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java</url>
+          <line>69</line>
           <properties />
-          <option name="timeStamp" value="58" />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java</url>
+          <line>494</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java</url>
+          <line>510</line>
+          <properties />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java</url>
+          <line>212</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java</url>
+          <line>337</line>
+          <properties />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="59" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="70" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_history.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1641,17 +1675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sensor_edit_one.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="211" max-vertical-offset="1054">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76443416" vertical-offset="26" max-vertical-offset="476">
@@ -1696,25 +1719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1326">
-          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk1/sources/android-22/android/os/Parcelable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1243" max-vertical-offset="2142">
@@ -1748,7 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17748" max-vertical-offset="57443">
           <caret line="1120" column="0" selection-start-line="1120" selection-start-column="0" selection-end-line="1120" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1756,15 +1759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1139">
           <caret line="28" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3553">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1792,168 +1786,248 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="3774">
-          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="179" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="3400">
-          <caret line="154" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding>
-            <element signature="e#3455#3922#0" expanded="true" />
-            <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#4329#4365#0" expanded="true" />
-            <element signature="e#4678#4835#0" expanded="true" />
-            <element signature="e#4824#4825#0" expanded="true" />
-            <element signature="e#5128#5718#0" expanded="true" />
-            <element signature="e#5329#5593#0" expanded="true" />
-            <element signature="e#5574#5575#0" expanded="true" />
-            <element signature="e#5707#5708#0" expanded="true" />
-            <element signature="e#5778#6367#0" expanded="true" />
-            <element signature="e#5979#6242#0" expanded="true" />
-            <element signature="e#6223#6224#0" expanded="true" />
-            <element signature="e#6356#6357#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38812786" vertical-offset="0" max-vertical-offset="1088">
           <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="5967">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sensor_edit_one.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.03125" vertical-offset="427" max-vertical-offset="1190">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
           <folding>
-            <element signature="e#5402#5403#0" expanded="true" />
-            <element signature="e#5432#5433#0" expanded="true" />
-            <element signature="e#5482#5483#0" expanded="true" />
-            <element signature="e#5531#5532#0" expanded="true" />
-            <element signature="e#7304#7305#0" expanded="true" />
-            <element signature="e#7333#7334#0" expanded="true" />
+            <element signature="e#863#877#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="1292">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1173">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#2149#2150#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1751" max-vertical-offset="4641">
+          <caret line="147" column="30" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="5865">
+          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="3094">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3553">
+          <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3016" max-vertical-offset="3842">
+          <caret line="229" column="19" selection-start-line="229" selection-start-column="19" selection-end-line="229" selection-end-column="19" />
+          <folding>
+            <element signature="e#8543#8544#0" expanded="true" />
+            <element signature="e#8570#8571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk1/sources/android-22/android/content/Intent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="76066" max-vertical-offset="132498">
+          <caret line="4557" column="0" selection-start-line="4557" selection-start-column="0" selection-end-line="4557" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.96" vertical-offset="964" max-vertical-offset="1343">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.4375" vertical-offset="3419" max-vertical-offset="3893">
+          <caret line="217" column="42" selection-start-line="217" selection-start-column="42" selection-end-line="217" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk1/sources/android-22/android/widget/AdapterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8644" max-vertical-offset="20230">
+          <caret line="550" column="15" selection-start-line="550" selection-start-column="15" selection-end-line="550" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="4709">
-          <caret line="45" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4410" max-vertical-offset="5848">
-          <caret line="296" column="29" selection-start-line="296" selection-start-column="29" selection-end-line="296" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1538" max-vertical-offset="3128">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
-            <element signature="e#11071#11735#0" expanded="true" />
-            <element signature="e#11724#11725#0" expanded="true" />
-            <element signature="e#11784#11913#0" expanded="true" />
-            <element signature="e#11902#11903#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3255#3443#0" expanded="true" />
+            <element signature="e#3428#3429#0" expanded="true" />
+            <element signature="e#3512#3660#0" expanded="true" />
+            <element signature="e#3649#3650#0" expanded="true" />
+            <element signature="e#6215#6216#0" expanded="true" />
+            <element signature="e#6243#6244#0" expanded="true" />
+            <element signature="e#6316#6317#0" expanded="true" />
+            <element signature="e#6344#6345#0" expanded="true" />
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6526#6527#0" expanded="true" />
+            <element signature="e#6575#6576#0" expanded="true" />
+            <element signature="e#6621#6622#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76" vertical-offset="4369" max-vertical-offset="7769">
-          <caret line="321" column="30" selection-start-line="321" selection-start-column="30" selection-end-line="321" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="8274" max-vertical-offset="9316">
+          <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2734#2754#0" expanded="true" />
-            <element signature="e#2757#2776#0" expanded="true" />
-            <element signature="e#3841#3870#0" expanded="true" />
-            <element signature="e#3872#3900#0" expanded="true" />
-            <element signature="e#3920#3949#0" expanded="true" />
-            <element signature="e#3951#3980#0" expanded="true" />
-            <element signature="e#4986#5022#0" expanded="true" />
-            <element signature="e#5024#5050#0" expanded="true" />
-            <element signature="e#5052#5081#0" expanded="true" />
-            <element signature="e#6483#6515#0" expanded="true" />
-            <element signature="e#6517#6548#0" expanded="true" />
-            <element signature="e#6566#6595#0" expanded="true" />
-            <element signature="e#6597#6626#0" expanded="true" />
-            <element signature="e#7154#7479#0" expanded="true" />
-            <element signature="e#7460#7461#0" expanded="true" />
-            <element signature="e#8037#8076#0" expanded="true" />
-            <element signature="e#8078#8104#0" expanded="true" />
-            <element signature="e#8106#8135#0" expanded="true" />
-            <element signature="e#10404#10432#0" expanded="true" />
-            <element signature="e#10688#10714#0" expanded="true" />
-            <element signature="e#10716#10744#0" expanded="true" />
-            <element signature="e#10750#10779#0" expanded="true" />
-            <element signature="e#10781#10810#0" expanded="true" />
-            <element signature="e#11341#11809#0" expanded="true" />
-            <element signature="e#11798#11799#0" expanded="true" />
-            <element signature="e#11876#12153#0" expanded="true" />
-            <element signature="e#12142#12143#0" expanded="true" />
-            <element signature="e#12219#12379#0" expanded="true" />
-            <element signature="e#12368#12369#0" expanded="true" />
-            <element signature="e#12447#12592#0" expanded="true" />
-            <element signature="e#12581#12582#0" expanded="true" />
-            <element signature="e#12660#12805#0" expanded="true" />
-            <element signature="e#12794#12795#0" expanded="true" />
-            <element signature="e#14119#14327#0" expanded="true" />
-            <element signature="e#14316#14317#0" expanded="true" />
-            <element signature="e#16254#16292#0" expanded="true" />
-            <element signature="e#16661#16699#0" expanded="true" />
-            <element signature="e#19043#19083#0" expanded="true" />
-            <element signature="e#19634#19657#0" expanded="true" />
-            <element signature="e#20358#20387#0" expanded="true" />
-            <element signature="e#20389#20420#0" expanded="true" />
-            <element signature="e#20454#20483#0" expanded="true" />
-            <element signature="e#20485#20514#0" expanded="true" />
-            <element signature="e#20516#21290#0" expanded="true" />
-            <element signature="e#21267#21268#0" expanded="true" />
-            <element signature="e#21588#21626#0" expanded="true" />
+            <element signature="e#2846#2866#0" expanded="true" />
+            <element signature="e#2869#2888#0" expanded="true" />
+            <element signature="e#3725#4545#0" expanded="true" />
+            <element signature="e#3953#3982#0" expanded="true" />
+            <element signature="e#3984#4012#0" expanded="true" />
+            <element signature="e#4032#4061#0" expanded="true" />
+            <element signature="e#4063#4092#0" expanded="true" />
+            <element signature="e#4094#4437#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
+            <element signature="e#4620#4836#0" expanded="true" />
+            <element signature="e#4817#4818#0" expanded="true" />
+            <element signature="e#4905#5445#0" expanded="true" />
+            <element signature="e#5098#5134#0" expanded="true" />
+            <element signature="e#5136#5162#0" expanded="true" />
+            <element signature="e#5164#5193#0" expanded="true" />
+            <element signature="e#5195#5402#0" expanded="true" />
+            <element signature="e#5375#5376#0" expanded="true" />
+            <element signature="e#5426#5427#0" expanded="true" />
+            <element signature="e#6439#6635#0" expanded="true" />
+            <element signature="e#6616#6617#0" expanded="true" />
+            <element signature="e#6771#7598#0" expanded="true" />
+            <element signature="e#6999#7031#0" expanded="true" />
+            <element signature="e#7033#7064#0" expanded="true" />
+            <element signature="e#7082#7111#0" expanded="true" />
+            <element signature="e#7113#7142#0" expanded="true" />
+            <element signature="e#7144#7490#0" expanded="true" />
+            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#7579#7580#0" expanded="true" />
+            <element signature="e#7670#7995#0" expanded="true" />
+            <element signature="e#7976#7977#0" expanded="true" />
+            <element signature="e#8070#8291#0" expanded="true" />
+            <element signature="e#8272#8273#0" expanded="true" />
+            <element signature="e#8360#8912#0" expanded="true" />
+            <element signature="e#8553#8592#0" expanded="true" />
+            <element signature="e#8594#8620#0" expanded="true" />
+            <element signature="e#8622#8651#0" expanded="true" />
+            <element signature="e#8653#8869#0" expanded="true" />
+            <element signature="e#8842#8843#0" expanded="true" />
+            <element signature="e#8893#8894#0" expanded="true" />
+            <element signature="e#9786#10085#0" expanded="true" />
+            <element signature="e#10074#10075#0" expanded="true" />
+            <element signature="e#10342#10599#0" expanded="true" />
+            <element signature="e#10588#10589#0" expanded="true" />
+            <element signature="e#10874#11127#0" expanded="true" />
+            <element signature="e#11116#11117#0" expanded="true" />
+            <element signature="e#11495#11523#0" expanded="true" />
+            <element signature="e#11583#12505#0" expanded="true" />
+            <element signature="e#11832#11858#0" expanded="true" />
+            <element signature="e#11860#11888#0" expanded="true" />
+            <element signature="e#11922#11951#0" expanded="true" />
+            <element signature="e#11953#11982#0" expanded="true" />
+            <element signature="e#11984#12400#0" expanded="true" />
+            <element signature="e#12377#12378#0" expanded="true" />
+            <element signature="e#12494#12495#0" expanded="true" />
+            <element signature="e#12567#13064#0" expanded="true" />
+            <element signature="e#13053#13054#0" expanded="true" />
+            <element signature="e#13131#13408#0" expanded="true" />
+            <element signature="e#13397#13398#0" expanded="true" />
+            <element signature="e#13474#13634#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
+            <element signature="e#13702#13847#0" expanded="true" />
+            <element signature="e#13836#13837#0" expanded="true" />
+            <element signature="e#13915#14060#0" expanded="true" />
+            <element signature="e#14049#14050#0" expanded="true" />
+            <element signature="e#15298#15506#0" expanded="true" />
+            <element signature="e#15495#15496#0" expanded="true" />
+            <element signature="e#15696#17053#0" expanded="true" />
+            <element signature="e#17042#17043#0" expanded="true" />
+            <element signature="e#17433#17471#0" expanded="true" />
+            <element signature="e#17840#17878#0" expanded="true" />
+            <element signature="e#18120#18346#0" expanded="true" />
+            <element signature="e#18335#18336#0" expanded="true" />
+            <element signature="e#18570#18789#0" expanded="true" />
+            <element signature="e#18778#18779#0" expanded="true" />
+            <element signature="e#19010#19246#0" expanded="true" />
+            <element signature="e#19235#19236#0" expanded="true" />
+            <element signature="e#20222#20262#0" expanded="true" />
+            <element signature="e#20813#20836#0" expanded="true" />
+            <element signature="e#22214#22243#0" expanded="true" />
+            <element signature="e#22245#22276#0" expanded="true" />
+            <element signature="e#22310#22339#0" expanded="true" />
+            <element signature="e#22341#22370#0" expanded="true" />
+            <element signature="e#22372#23138#0" expanded="true" />
+            <element signature="e#23115#23116#0" expanded="true" />
+            <element signature="e#23436#23474#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55324674" vertical-offset="3901" max-vertical-offset="5848">
+          <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

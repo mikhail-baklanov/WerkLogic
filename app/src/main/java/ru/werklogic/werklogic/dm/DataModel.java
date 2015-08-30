@@ -262,6 +262,14 @@ public class DataModel {
 
     }
 
+    public synchronized void setSensorActions(HardwareSensorInfo s, int sensorTypeNumber, int action1, int action2, int action3, int action4) {
+        SensorState ss = getSensorByHardwareSensorInfo(s);
+        if (ss != null) {
+            ss.setSensorType(sensorTypeNumber, action1, action2, action3, action4);
+            sendDataRefreshEvent(true, true);
+        }
+    }
+
     public synchronized void setSensorInitedState(HardwareSensorInfo hwi, int button, boolean batteryHigh) {
         SensorState ss = getSensorByHardwareSensorInfo(hwi);
         if (ss != null) {
