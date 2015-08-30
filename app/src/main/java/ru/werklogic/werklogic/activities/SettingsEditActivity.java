@@ -258,7 +258,7 @@ public class SettingsEditActivity extends Activity {
         findViewById(R.id.btnAddSms).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (dm.isConfigInternal()) {
+                if (Utils.isTestMode() || (dm.getConfig() != null && dm.getConfig().isUsbAttached())) {
                     TextEditDialogFragment dialog = new TextEditDialogFragment(
                             getString(R.string.addSms), getString(R.string.labelSms), "",
                             getString(R.string.btnCreate), getString(R.string.btnCancel), new TextEditDialogFragment.Listener() {
@@ -277,7 +277,7 @@ public class SettingsEditActivity extends Activity {
         findViewById(R.id.btnAddSensor).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Utils.isTestMode() || dm.isConfigInternal()) {
+                if (Utils.isTestMode() || (dm.getConfig() != null && dm.getConfig().isUsbAttached())) {
                     Intent intent = new Intent(SettingsEditActivity.this,
                             SensorTypeActivity.class);
                     intent.putExtra(SensorTypeActivity.SENSOR_TYPE_NUMBER_PARAM, 0);

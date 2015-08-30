@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
 
 import ru.werklogic.werklogic.dm.events.EventType;
 import ru.werklogic.werklogic.protocol.data.HardwareSensorInfo;
@@ -46,10 +47,12 @@ public class Config implements Serializable, Parcelable {
     }
 
     public synchronized void setSpyMode(boolean isSpyMode) {
-        this.isSpyMode = isSpyMode;
-        if (!isSpyMode) {
-            for (SensorState s : sensorsStates) {
-                s.saveEvent(new Date(), EventType.READ);
+        if (isSpyMode() != isSpyMode) {
+            this.isSpyMode = isSpyMode;
+            if (!isSpyMode) {
+                for (SensorState s : sensorsStates) {
+                    s.saveEvent(new Date(), EventType.READ);
+                }
             }
         }
     }
@@ -127,7 +130,7 @@ public class Config implements Serializable, Parcelable {
         sensorsStates.clear();
         smsItems.clear();
         cloudId = null;
-        isSpyMode = false;
+        setSpyMode(false);
     }
 
     public void addHardwareSensorInfo(HardwareSensorInfo s) {
@@ -161,13 +164,11 @@ public class Config implements Serializable, Parcelable {
     }
 
     public void setConfig(Config config) {
-        isSpyMode = false;
-        cloudId = null;
-        checkSum = null;
+
         sensorsStates.clear();
         smsItems.clear();
         if (config != null) {
-            isSpyMode = config.isSpyMode;
+            setSpyMode(config.isSpyMode());
             cloudId = config.cloudId;
             checkSum = config.checkSum;
             if (config.getSensorsStates() != null) {
@@ -184,6 +185,10 @@ public class Config implements Serializable, Parcelable {
                         smsItems.add(s);
                 }
             }
+        } else {
+            setSpyMode(false);
+            cloudId = null;
+            checkSum = null;
         }
     }
 
@@ -198,7 +203,7 @@ public class Config implements Serializable, Parcelable {
         dest.writeList(this.smsItems);
         dest.writeString(this.checkSum);
         dest.writeString(this.cloudId);
-        dest.writeByte(isSpyMode ? (byte) 1 : (byte) 0);
+        dest.writeByte(isSpyMode() ? (byte) 1 : (byte) 0);
         dest.writeByte(isUsbAttached ? (byte) 1 : (byte) 0);
     }
 
@@ -209,7 +214,7 @@ public class Config implements Serializable, Parcelable {
         in.readList(this.smsItems, getClass().getClassLoader());
         this.checkSum = in.readString();
         this.cloudId = in.readString();
-        this.isSpyMode = in.readByte() != 0;
+        setSpyMode(in.readByte() != 0);
         this.isUsbAttached = in.readByte() != 0;
     }
 
@@ -230,7 +235,7 @@ public class Config implements Serializable, Parcelable {
                 ", smsItems=" + smsItems +
                 ", checkSum='" + checkSum + '\'' +
                 ", cloudId='" + cloudId + '\'' +
-                ", isSpyMode=" + isSpyMode +
+                ", isSpyMode=" + isSpyMode() +
                 ", isUsbAttached=" + isUsbAttached +
                 '}';
     }

@@ -107,9 +107,12 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="3094">
-              <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="3604">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#4616#4773#0" expanded="true" />
+                <element signature="e#4762#4763#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,8 +120,8 @@
       <file leaf-file-name="SettingsEditActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8274" max-vertical-offset="9316">
-              <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4284" max-vertical-offset="9316">
+              <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2846#2866#0" expanded="true" />
@@ -168,45 +171,45 @@
                 <element signature="e#10874#11127#0" expanded="true" />
                 <element signature="e#11116#11117#0" expanded="true" />
                 <element signature="e#11495#11523#0" expanded="true" />
-                <element signature="e#11583#12505#0" expanded="true" />
-                <element signature="e#11832#11858#0" expanded="true" />
-                <element signature="e#11860#11888#0" expanded="true" />
-                <element signature="e#11922#11951#0" expanded="true" />
-                <element signature="e#11953#11982#0" expanded="true" />
-                <element signature="e#11984#12400#0" expanded="true" />
-                <element signature="e#12377#12378#0" expanded="true" />
-                <element signature="e#12494#12495#0" expanded="true" />
-                <element signature="e#12567#13064#0" expanded="true" />
-                <element signature="e#13053#13054#0" expanded="true" />
-                <element signature="e#13131#13408#0" expanded="true" />
-                <element signature="e#13397#13398#0" expanded="true" />
-                <element signature="e#13474#13634#0" expanded="true" />
-                <element signature="e#13623#13624#0" expanded="true" />
-                <element signature="e#13702#13847#0" expanded="true" />
-                <element signature="e#13836#13837#0" expanded="true" />
-                <element signature="e#13915#14060#0" expanded="true" />
-                <element signature="e#14049#14050#0" expanded="true" />
-                <element signature="e#15298#15506#0" expanded="true" />
-                <element signature="e#15495#15496#0" expanded="true" />
-                <element signature="e#15696#17053#0" expanded="true" />
-                <element signature="e#17042#17043#0" expanded="true" />
-                <element signature="e#17433#17471#0" expanded="true" />
-                <element signature="e#17840#17878#0" expanded="true" />
-                <element signature="e#18120#18346#0" expanded="true" />
-                <element signature="e#18335#18336#0" expanded="true" />
-                <element signature="e#18570#18789#0" expanded="true" />
-                <element signature="e#18778#18779#0" expanded="true" />
-                <element signature="e#19010#19246#0" expanded="true" />
-                <element signature="e#19235#19236#0" expanded="true" />
-                <element signature="e#20222#20262#0" expanded="true" />
-                <element signature="e#20813#20836#0" expanded="true" />
-                <element signature="e#22214#22243#0" expanded="true" />
-                <element signature="e#22245#22276#0" expanded="true" />
+                <element signature="e#11583#12564#0" expanded="true" />
+                <element signature="e#11891#11917#0" expanded="true" />
+                <element signature="e#11919#11947#0" expanded="true" />
+                <element signature="e#11981#12010#0" expanded="true" />
+                <element signature="e#12012#12041#0" expanded="true" />
+                <element signature="e#12043#12459#0" expanded="true" />
+                <element signature="e#12436#12437#0" expanded="true" />
+                <element signature="e#12553#12554#0" expanded="true" />
+                <element signature="e#12626#13160#0" expanded="true" />
+                <element signature="e#13149#13150#0" expanded="true" />
+                <element signature="e#13227#13504#0" expanded="true" />
+                <element signature="e#13493#13494#0" expanded="true" />
+                <element signature="e#13570#13730#0" expanded="true" />
+                <element signature="e#13719#13720#0" expanded="true" />
+                <element signature="e#13798#13943#0" expanded="true" />
+                <element signature="e#13932#13933#0" expanded="true" />
+                <element signature="e#14011#14156#0" expanded="true" />
+                <element signature="e#14145#14146#0" expanded="true" />
+                <element signature="e#15394#15602#0" expanded="true" />
+                <element signature="e#15591#15592#0" expanded="true" />
+                <element signature="e#15792#17149#0" expanded="true" />
+                <element signature="e#17138#17139#0" expanded="true" />
+                <element signature="e#17529#17567#0" expanded="true" />
+                <element signature="e#17936#17974#0" expanded="true" />
+                <element signature="e#18216#18442#0" expanded="true" />
+                <element signature="e#18431#18432#0" expanded="true" />
+                <element signature="e#18666#18885#0" expanded="true" />
+                <element signature="e#18874#18875#0" expanded="true" />
+                <element signature="e#19106#19342#0" expanded="true" />
+                <element signature="e#19331#19332#0" expanded="true" />
+                <element signature="e#20318#20358#0" expanded="true" />
+                <element signature="e#20909#20932#0" expanded="true" />
                 <element signature="e#22310#22339#0" expanded="true" />
-                <element signature="e#22341#22370#0" expanded="true" />
-                <element signature="e#22372#23138#0" expanded="true" />
-                <element signature="e#23115#23116#0" expanded="true" />
-                <element signature="e#23436#23474#0" expanded="true" />
+                <element signature="e#22341#22372#0" expanded="true" />
+                <element signature="e#22406#22435#0" expanded="true" />
+                <element signature="e#22437#22466#0" expanded="true" />
+                <element signature="e#22468#23234#0" expanded="true" />
+                <element signature="e#23211#23212#0" expanded="true" />
+                <element signature="e#23532#23570#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -225,11 +228,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WerkLogicService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WerkLogicService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="5865">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.27860695" vertical-offset="3288" max-vertical-offset="6766">
+              <caret line="250" column="48" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
+              <folding>
+                <element signature="e#5427#5428#0" expanded="true" />
+                <element signature="e#5457#5458#0" expanded="true" />
+                <element signature="e#5507#5508#0" expanded="true" />
+                <element signature="e#5556#5557#0" expanded="true" />
+                <element signature="e#7329#7330#0" expanded="true" />
+                <element signature="e#7358#7359#0" expanded="true" />
+                <element signature="e#9921#10219#0" expanded="true" />
+                <element signature="e#10208#10209#0" expanded="true" />
+                <element signature="e#10426#11558#0" expanded="true" />
+                <element signature="e#11547#11548#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateSpyModeCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="952">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -259,35 +283,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_sensor_type.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.4375" vertical-offset="3419" max-vertical-offset="3893">
-              <caret line="217" column="42" selection-start-line="217" selection-start-column="42" selection-end-line="217" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.96" vertical-offset="964" max-vertical-offset="1343">
-              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataModel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DataModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55324674" vertical-offset="3901" max-vertical-offset="5848">
-              <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5209" max-vertical-offset="6205">
+              <caret line="343" column="33" selection-start-line="343" selection-start-column="27" selection-end-line="343" selection-end-column="33" />
+              <folding>
+                <element signature="e#1694#1695#0" expanded="true" />
+                <element signature="e#1732#1733#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -295,8 +299,23 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3553">
-              <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="3689">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1208#1209#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceAttachActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/DeviceAttachActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="211" max-vertical-offset="2023">
+              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -945,7 +964,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/QRCodeEncoder.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings_edit.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/QRActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_qr.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/action_type" />
@@ -953,18 +971,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorTypeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/SpyModeSwitchCommand.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/ActionType.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sensor_type.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sensor_edit_one.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorType.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/SensorState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SensorTypeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java" />
       </list>
     </option>
   </component>
@@ -1400,21 +1419,21 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32034633" sideWeight="0.57254905" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3968254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3015873" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.42745098" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24645162" sideWeight="0.5007215" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2886003" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37229437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37229437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967742" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24611399" sideWeight="0.4978355" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24611399" sideWeight="0.4978355" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1423,6 +1442,36 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3015873" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24645162" sideWeight="0.5007215" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.42745098" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24611399" sideWeight="0.4978355" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903226" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32034633" sideWeight="0.57254905" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2886003" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37229437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967742" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1752,6 +1801,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17748" max-vertical-offset="57443">
           <caret line="1120" column="0" selection-start-line="1120" selection-start-column="0" selection-end-line="1120" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1759,13 +1809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1139">
           <caret line="28" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/DeviceAttachActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2023">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1783,13 +1826,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="64500" max-vertical-offset="102833">
           <caret line="3982" column="16" selection-start-line="3982" selection-start-column="16" selection-end-line="3982" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38812786" vertical-offset="0" max-vertical-offset="1088">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1832,41 +1868,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1751" max-vertical-offset="4641">
           <caret line="147" column="30" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="5865">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="3094">
-          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3553">
-          <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3016" max-vertical-offset="3842">
-          <caret line="229" column="19" selection-start-line="229" selection-start-column="19" selection-end-line="229" selection-end-column="19" />
-          <folding>
-            <element signature="e#8543#8544#0" expanded="true" />
-            <element signature="e#8570#8571#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1927,10 +1928,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/DeviceAttachActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="211" max-vertical-offset="2023">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/SettingsEditActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8274" max-vertical-offset="9316">
-          <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4284" max-vertical-offset="9316">
+          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2846#2866#0" expanded="true" />
@@ -1980,54 +1989,119 @@
             <element signature="e#10874#11127#0" expanded="true" />
             <element signature="e#11116#11117#0" expanded="true" />
             <element signature="e#11495#11523#0" expanded="true" />
-            <element signature="e#11583#12505#0" expanded="true" />
-            <element signature="e#11832#11858#0" expanded="true" />
-            <element signature="e#11860#11888#0" expanded="true" />
-            <element signature="e#11922#11951#0" expanded="true" />
-            <element signature="e#11953#11982#0" expanded="true" />
-            <element signature="e#11984#12400#0" expanded="true" />
-            <element signature="e#12377#12378#0" expanded="true" />
-            <element signature="e#12494#12495#0" expanded="true" />
-            <element signature="e#12567#13064#0" expanded="true" />
-            <element signature="e#13053#13054#0" expanded="true" />
-            <element signature="e#13131#13408#0" expanded="true" />
-            <element signature="e#13397#13398#0" expanded="true" />
-            <element signature="e#13474#13634#0" expanded="true" />
-            <element signature="e#13623#13624#0" expanded="true" />
-            <element signature="e#13702#13847#0" expanded="true" />
-            <element signature="e#13836#13837#0" expanded="true" />
-            <element signature="e#13915#14060#0" expanded="true" />
-            <element signature="e#14049#14050#0" expanded="true" />
-            <element signature="e#15298#15506#0" expanded="true" />
-            <element signature="e#15495#15496#0" expanded="true" />
-            <element signature="e#15696#17053#0" expanded="true" />
-            <element signature="e#17042#17043#0" expanded="true" />
-            <element signature="e#17433#17471#0" expanded="true" />
-            <element signature="e#17840#17878#0" expanded="true" />
-            <element signature="e#18120#18346#0" expanded="true" />
-            <element signature="e#18335#18336#0" expanded="true" />
-            <element signature="e#18570#18789#0" expanded="true" />
-            <element signature="e#18778#18779#0" expanded="true" />
-            <element signature="e#19010#19246#0" expanded="true" />
-            <element signature="e#19235#19236#0" expanded="true" />
-            <element signature="e#20222#20262#0" expanded="true" />
-            <element signature="e#20813#20836#0" expanded="true" />
-            <element signature="e#22214#22243#0" expanded="true" />
-            <element signature="e#22245#22276#0" expanded="true" />
+            <element signature="e#11583#12564#0" expanded="true" />
+            <element signature="e#11891#11917#0" expanded="true" />
+            <element signature="e#11919#11947#0" expanded="true" />
+            <element signature="e#11981#12010#0" expanded="true" />
+            <element signature="e#12012#12041#0" expanded="true" />
+            <element signature="e#12043#12459#0" expanded="true" />
+            <element signature="e#12436#12437#0" expanded="true" />
+            <element signature="e#12553#12554#0" expanded="true" />
+            <element signature="e#12626#13160#0" expanded="true" />
+            <element signature="e#13149#13150#0" expanded="true" />
+            <element signature="e#13227#13504#0" expanded="true" />
+            <element signature="e#13493#13494#0" expanded="true" />
+            <element signature="e#13570#13730#0" expanded="true" />
+            <element signature="e#13719#13720#0" expanded="true" />
+            <element signature="e#13798#13943#0" expanded="true" />
+            <element signature="e#13932#13933#0" expanded="true" />
+            <element signature="e#14011#14156#0" expanded="true" />
+            <element signature="e#14145#14146#0" expanded="true" />
+            <element signature="e#15394#15602#0" expanded="true" />
+            <element signature="e#15591#15592#0" expanded="true" />
+            <element signature="e#15792#17149#0" expanded="true" />
+            <element signature="e#17138#17139#0" expanded="true" />
+            <element signature="e#17529#17567#0" expanded="true" />
+            <element signature="e#17936#17974#0" expanded="true" />
+            <element signature="e#18216#18442#0" expanded="true" />
+            <element signature="e#18431#18432#0" expanded="true" />
+            <element signature="e#18666#18885#0" expanded="true" />
+            <element signature="e#18874#18875#0" expanded="true" />
+            <element signature="e#19106#19342#0" expanded="true" />
+            <element signature="e#19331#19332#0" expanded="true" />
+            <element signature="e#20318#20358#0" expanded="true" />
+            <element signature="e#20909#20932#0" expanded="true" />
             <element signature="e#22310#22339#0" expanded="true" />
-            <element signature="e#22341#22370#0" expanded="true" />
-            <element signature="e#22372#23138#0" expanded="true" />
-            <element signature="e#23115#23116#0" expanded="true" />
-            <element signature="e#23436#23474#0" expanded="true" />
+            <element signature="e#22341#22372#0" expanded="true" />
+            <element signature="e#22406#22435#0" expanded="true" />
+            <element signature="e#22437#22466#0" expanded="true" />
+            <element signature="e#22468#23234#0" expanded="true" />
+            <element signature="e#23211#23212#0" expanded="true" />
+            <element signature="e#23532#23570#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="3604">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#4616#4773#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="3689">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3016" max-vertical-offset="3842">
+          <caret line="229" column="19" selection-start-line="229" selection-start-column="19" selection-end-line="229" selection-end-column="19" />
+          <folding>
+            <element signature="e#8543#8544#0" expanded="true" />
+            <element signature="e#8570#8571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/commands/UpdateSpyModeCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="952">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/dm/DataModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55324674" vertical-offset="3901" max-vertical-offset="5848">
-          <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5209" max-vertical-offset="6205">
+          <caret line="343" column="33" selection-start-line="343" selection-start-column="27" selection-end-line="343" selection-end-column="33" />
+          <folding>
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1732#1733#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/werklogic/werklogic/service/WerkLogicService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27860695" vertical-offset="3288" max-vertical-offset="6766">
+          <caret line="250" column="48" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
+          <folding>
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5457#5458#0" expanded="true" />
+            <element signature="e#5507#5508#0" expanded="true" />
+            <element signature="e#5556#5557#0" expanded="true" />
+            <element signature="e#7329#7330#0" expanded="true" />
+            <element signature="e#7358#7359#0" expanded="true" />
+            <element signature="e#9921#10219#0" expanded="true" />
+            <element signature="e#10208#10209#0" expanded="true" />
+            <element signature="e#10426#11558#0" expanded="true" />
+            <element signature="e#11547#11548#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

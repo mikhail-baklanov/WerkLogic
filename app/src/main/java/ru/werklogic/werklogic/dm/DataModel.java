@@ -45,6 +45,14 @@ public class DataModel {
     private boolean isConfigInternal = false;
     private boolean wsConnectionStatus;
 
+    public synchronized boolean isAlert() {
+        boolean result = false;
+        for (SensorState s : getSensorsStates()) {
+            result |= s.isAlert();
+        }
+        return result;
+    }
+
     DataModel(Context context) {
         this.context = context;
     }
@@ -326,16 +334,26 @@ public class DataModel {
         sendDataRefreshEvent(true, true);
     }
 
-    private Timer scheduleSpyModeTimer = new Timer();
-    private Timer scheduleBeeperTimer = new Timer();
+    private Timer scheduleSpyModeTimer;
+    private Timer scheduleBeeperTimer;
+
     private MediaPlayer spyPlayer;
 
     public synchronized void stopSchedulingSpyMode() {
-        scheduleSpyModeTimer.cancel();
-        scheduleBeeperTimer.cancel();
+        if (scheduleSpyModeTimer != null) {
+            scheduleSpyModeTimer.cancel();
+            scheduleSpyModeTimer = null;
+        }
+
+        if (scheduleBeeperTimer != null) {
+            scheduleBeeperTimer.cancel();
+            scheduleBeeperTimer = null;
+        }
     }
 
     public synchronized void scheduleSpyMode() {
+
+        scheduleBeeperTimer = new Timer();
         scheduleBeeperTimer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -353,6 +371,7 @@ public class DataModel {
                     spyPlayer.start();
             }
         }, 0, 500);
+        scheduleSpyModeTimer = new Timer();
         scheduleSpyModeTimer.schedule(new TimerTask() {
             @Override
             public void run() {

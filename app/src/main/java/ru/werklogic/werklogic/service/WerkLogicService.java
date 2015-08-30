@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Base64;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -19,7 +21,7 @@ import java.util.TimerTask;
 import de.tavendo.autobahn.WebSocketConnection;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 import de.tavendo.autobahn.WebSocketException;
-import ru.werklogic.werklogic.activities.SensorTypeActivity;
+import ru.werklogic.werklogic.R;
 import ru.werklogic.werklogic.commands.BaseCommand;
 import ru.werklogic.werklogic.commands.ConnectNewClientCommand;
 import ru.werklogic.werklogic.commands.UpdateConfigCommand;
@@ -52,6 +54,9 @@ public class WerkLogicService extends Service implements IWerkLogicService {
     private DataModel dm;
     private WebSocketConnection mConnection;
     private String cloudIdForWebSocketUrl;
+    private Timer connectionCheckTimer;
+    private Timer sirenaCheckTimer;
+    private boolean connecting;
 
     @Override
     public boolean connectUsbDevice(UsbDevice usbDevice) {
@@ -61,46 +66,46 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                 @Override
                 public void onData(IResponseData data) {
                     Utils.log("Из устройства приняты данные общим слушателем: " + data.toString());
-                    if (dm.isSpyMode()) {
-                        if (data instanceof HardwareSensorInfo) {
-                            Utils.log("Данные распознаны");
-                            HardwareSensorInfo hwi = (HardwareSensorInfo) data;
-                            SensorState s = dm.preprocessEvent(hwi);
-                            if (s != null) {
-                                int sensorTypeNumber = s.getSensorTypeNumber();
-                                SensorType sensorType = SensorType.values()[sensorTypeNumber];
-                                if (sensorType != null) {
-                                    if (hwi.getButton() < sensorType.getButtonsCount()) {
-                                        ActionType actionType = s.getAction(hwi.getButton());
-                                        if (ActionType.SWITCH.equals(actionType)) {
-                                            if (dm.isSpyMode())
-                                                actionType = ActionType.TO_NORMAL;
-                                            else
-                                                actionType = ActionType.TO_SPY;
-                                        }
-                                        switch (actionType) {
-                                            case NONE:
-                                            case SWITCH:
-                                                break;
-                                            case SIGNAL:
+                    if (data instanceof HardwareSensorInfo) {
+                        Utils.log("Данные распознаны");
+                        HardwareSensorInfo hwi = (HardwareSensorInfo) data;
+                        SensorState s = dm.preprocessEvent(hwi);
+                        if (s != null) {
+                            int sensorTypeNumber = s.getSensorTypeNumber();
+                            SensorType sensorType = SensorType.values()[sensorTypeNumber];
+                            if (sensorType != null) {
+                                if (hwi.getButton() < sensorType.getButtonsCount()) {
+                                    ActionType actionType = s.getAction(hwi.getButton());
+                                    if (ActionType.SWITCH.equals(actionType)) {
+                                        if (dm.isSpyMode())
+                                            actionType = ActionType.TO_NORMAL;
+                                        else
+                                            actionType = ActionType.TO_SPY;
+                                    }
+                                    switch (actionType) {
+                                        case NONE:
+                                        case SWITCH:
+                                            break;
+                                        case SIGNAL:
+                                            if (dm.isSpyMode()) {
                                                 dm.saveEvent(s, new Date());
-                                                break;
-                                            case TO_SPY:
-                                                if (dm.isConfigInternal())
-                                                    dm.scheduleSpyMode();
-                                                else
-                                                    processCommand(new UpdateSpyModeCommand(true));
-                                                break;
-                                            case TO_NORMAL:
-                                                processCommand(new UpdateSpyModeCommand(false));
-                                                break;
-                                        }
+                                            }
+                                            break;
+                                        case TO_SPY:
+                                            if (dm.isConfigInternal())
+                                                dm.scheduleSpyMode();
+                                            else
+                                                processCommand(new UpdateSpyModeCommand(true));
+                                            break;
+                                        case TO_NORMAL:
+                                            processCommand(new UpdateSpyModeCommand(false));
+                                            break;
                                     }
                                 }
                             }
-                        } else {
-                            Utils.log("Данные не распознаны");
                         }
+                    } else {
+                        Utils.log("Данные не распознаны");
                     }
                 }
 
@@ -190,7 +195,8 @@ public class WerkLogicService extends Service implements IWerkLogicService {
         Utils.log(getClass().getSimpleName() + ": create service");
         dm = Utils.getApplication(this).getDataModel();
 
-        initWSThread();
+        initWebSoketConnectionCheckTimer();
+        initSirenaCheckTimer();
 
         broadcastReceiver = new LocalBroadcastReceiver();
         broadcastFilter = new IntentFilter();
@@ -199,9 +205,6 @@ public class WerkLogicService extends Service implements IWerkLogicService {
         registerReceiver(broadcastReceiver, broadcastFilter);
         Utils.log("Зарегистрирован слушатель для action " + DataModel.DETACH_ACTION);
     }
-
-    private Timer connectionCheckTimer;
-    private boolean connecting;
 
     private void checkConnection() {
         if (mConnection == null)
@@ -244,7 +247,7 @@ public class WerkLogicService extends Service implements IWerkLogicService {
         }
     }
 
-    private void initWSThread() {
+    private void initWebSoketConnectionCheckTimer() {
         final Handler uiHandler = new Handler();
         connectionCheckTimer = new Timer();
         connectionCheckTimer.schedule(new TimerTask() {
@@ -258,6 +261,42 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                 });
             }
         }, 0L, 5000);
+
+    }
+
+    private boolean prevAlert;
+    private MediaPlayer sirenaPlayer;
+
+    private void initSirenaCheckTimer() {
+        sirenaCheckTimer = new Timer();
+        sirenaCheckTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                boolean isAlert = dm.isAlert();
+                if (isAlert != prevAlert) {
+                    prevAlert = isAlert;
+                    if (isAlert) {
+                        if (sirenaPlayer == null) {
+                            sirenaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sirena_cut);
+                            try {
+                                sirenaPlayer.prepare();
+                            } catch (IllegalStateException | IOException e) {
+                                Utils.log("Исключение при выполнении sirenaPlayer.prepare(): " + Utils.getStackTrace(e));
+                            }
+                            sirenaPlayer.setVolume(1.0f, 1.0f);
+                            sirenaPlayer.setLooping(true);
+                        }
+                        sirenaPlayer.start();
+                    } else {
+                        if (sirenaPlayer == null) {
+                            sirenaPlayer.stop();
+                        }
+                    }
+                }
+            }
+        }
+
+                , 0L, 500);
 
     }
 
@@ -352,7 +391,14 @@ public class WerkLogicService extends Service implements IWerkLogicService {
         if (mConnection.isConnected()) {
             mConnection.disconnect();
         }
-        connectionCheckTimer.cancel();
+        if (connectionCheckTimer != null) {
+            connectionCheckTimer.cancel();
+            connectionCheckTimer = null;
+        }
+        if (sirenaCheckTimer != null) {
+            sirenaCheckTimer.cancel();
+            sirenaCheckTimer = null;
+        }
 
         closeChannel();
 
