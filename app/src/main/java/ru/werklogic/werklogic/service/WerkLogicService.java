@@ -88,14 +88,18 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                                             break;
                                         case SIGNAL:
                                             if (dm.isSpyMode()) {
-                                                dm.saveEvent(s, new Date());
+                                                Date d = new Date();
+                                                dm.saveEvent(s, d);
+                                                dm.sendSms(s, d);
                                             }
                                             break;
                                         case TO_SPY:
-                                            if (dm.isConfigInternal())
-                                                dm.scheduleSpyMode();
-                                            else
-                                                processCommand(new UpdateSpyModeCommand(true));
+                                            if (!dm.isSpyMode()) {
+                                                if (dm.isConfigInternal())
+                                                    dm.scheduleSpyMode();
+                                                else
+                                                    processCommand(new UpdateSpyModeCommand(true));
+                                            }
                                             break;
                                         case TO_NORMAL:
                                             processCommand(new UpdateSpyModeCommand(false));
@@ -283,13 +287,15 @@ public class WerkLogicService extends Service implements IWerkLogicService {
                             } catch (IllegalStateException | IOException e) {
                                 Utils.log("Исключение при выполнении sirenaPlayer.prepare(): " + Utils.getStackTrace(e));
                             }
-                            sirenaPlayer.setVolume(1.0f, 1.0f);
+//                            sirenaPlayer.setVolume(1.0f, 1.0f);
+                            sirenaPlayer.setVolume(0.0f, 1.0f);
                             sirenaPlayer.setLooping(true);
                         }
                         sirenaPlayer.start();
                     } else {
-                        if (sirenaPlayer == null) {
+                        if (sirenaPlayer != null) {
                             sirenaPlayer.stop();
+                            sirenaPlayer = null;
                         }
                     }
                 }

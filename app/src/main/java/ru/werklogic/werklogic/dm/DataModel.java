@@ -352,7 +352,7 @@ public class DataModel {
     }
 
     public synchronized void scheduleSpyMode() {
-
+        stopSchedulingSpyMode();
         scheduleBeeperTimer = new Timer();
         scheduleBeeperTimer.schedule(new TimerTask() {
             @Override
@@ -365,7 +365,8 @@ public class DataModel {
                     } catch (IllegalStateException | IOException e) {
                         Utils.log("Исключение при выполнении spyPlayer.prepare(): " + Utils.getStackTrace(e));
                     }
-                    spyPlayer.setVolume(1.0f, 1.0f);
+//                    spyPlayer.setVolume(1.0f, 1.0f);
+                    spyPlayer.setVolume(0.1f, 1.0f);
                 }
                 if (!spyPlayer.isPlaying())
                     spyPlayer.start();
@@ -395,5 +396,15 @@ public class DataModel {
             sendDataRefreshEvent(true, true);
         }
 
+    }
+
+    public void sendSms(SensorState s, Date date) {
+//            String phoneNumber = "0123456789";
+//            String message = "Hello World! Now we are going to demonstrate " +
+//                    "how to send a message with more than 160 characters from your Android application.";
+//
+//            SmsManager smsManager = SmsManager.getDefault();
+//            ArrayList<String> parts = smsManager.divideMessage(message);
+//            smsManager.sendMultipartTextMessage(phoneNumber, null, parts, null, null);
     }
 }
